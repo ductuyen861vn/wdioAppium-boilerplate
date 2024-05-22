@@ -72,7 +72,7 @@ This shared config holds **all the defaults** so the iOS and Android configs onl
 
 Please check the [`wdio.shared.conf.ts`](./config/wdio.shared.conf.ts)-file for the minimal configuration options. Notes are added for why a different value has been selected in comparison to the default values WebdriverIO provides.
 
-Since we do not have Appium installed as part of this package we are going to use the globally installed version of Appium. This is configured in [`wdio.shared.local.appium.conf.ts`](./config/wdio.shared.local.appium.conf.ts).
+Since we do not have Appium installed as part of this package we are going to use the globally installed version of Appium. This is configured in [`wdio.mobile.shared.local.appium.conf.ts`](./config/wdio.mobile.shared.local.appium.conf.ts).
 
 ## Locator strategy for native apps
 
@@ -263,7 +263,7 @@ npm run ios.app -- --spec=tests/specs/app.webview.xpath.spec.ts
 
 Mobile web automation is almost the same as writing tests for desktop browsers. The only difference can be found in the configuration that needs to be used. Click [here](config/wdio.ios.browser.conf.ts) to find the config for iOS Safari and [here](config/wdio.android.browser.conf.ts) for Android Chrome.
 For Android be sure that the latest version of Chrome is installed, see also
-[here](./docs/FAQ.md#i-get-the-error-no-chromedriver-found-that-can-automate-chrome-). Our [`wdio.shared.local.appium.conf.ts`](./config/wdio.shared.local.appium.conf.ts) uses the `relaxedSecurity: true` argument from Appium which will allow Appium to automatically download the latest ChromeDriver.
+[here](./docs/FAQ.md#i-get-the-error-no-chromedriver-found-that-can-automate-chrome-). Our [`wdio.mobile.shared.local.appium.conf.ts`](./config/wdio.mobile.shared.local.appium.conf.ts) uses the `relaxedSecurity: true` argument from Appium which will allow Appium to automatically download the latest ChromeDriver.
 
 For this boilerplate, the test cases from the Jasmine boilerplate, created by [Christian Bromann](https://github.com/christian-bromann), are used.
 

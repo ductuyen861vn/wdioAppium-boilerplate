@@ -3,10 +3,17 @@ import { config as baseConfig } from './wdio.shared.conf.js';
 export const config: WebdriverIO.Config = {
     ...baseConfig,
 
+    //
+    // ====================
+    // Runner Configuration
+    // ====================
+    //
+    runner: 'browser',
+
     // ============
     // Specs
     // ============
-    specs: ['../tests/specs/**/browser*.spec.ts'],
+    specs: ['../tests/specs/web/**/*.ts'],
 
     // ============
     // Capabilities
@@ -16,16 +23,6 @@ export const config: WebdriverIO.Config = {
     capabilities: [
         {
             browserName: 'chrome',
-        },
-        {
-            browserName: 'firefox',
-        },
-        {
-            browserName: 'edge',
-        },
-        {
-            maxInstances: 1,
-            browserName: 'safari',
         }
     ]
 };

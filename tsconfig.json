@@ -17,14 +17,11 @@
             "@wdio/mocha-framework",
             "expect-webdriverio",
             "@wdio/sauce-service",
+            "@wdio/devtools-service"
         ]
     },
     "include": [
         "./config/**/*.ts",
         "./tests/**/*.ts"
     ],
-    "ts-node": {
-        // Tell ts-node CLI to install the --loader automatically, explained below
-        "esm": true
-    }
 }

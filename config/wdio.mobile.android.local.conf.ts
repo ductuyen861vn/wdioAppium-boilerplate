@@ -1,5 +1,5 @@
 import {join} from 'node:path';
-import {config as baseConfig} from './wdio.shared.local.appium.conf.js';
+import {config as baseConfig} from './wdio.mobile.shared.local.appium.conf.js';
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,
@@ -8,7 +8,7 @@ export const config: WebdriverIO.Config = {
     // Specs
     // ============
     specs: [
-        '../tests/specs/gp.android.app.login.ts',
+        '../tests/specs/mobile/android/**/*.ts',
     ],
 
     // ============
