@@ -2,7 +2,7 @@
   "name": "run select spec",
   "type": "node",
   "request": "launch",
-  "args": ["wdio.browser.google.search.conf.js", "--spec", "${file}"],
+  "args": ["config/wdio.mobile.android.local.conf.ts", "--spec", "${file}"],
   "cwd": "${workspaceFolder}",
   "autoAttachChildProcesses": true,
   "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",

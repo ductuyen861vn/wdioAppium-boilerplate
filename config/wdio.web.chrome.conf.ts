@@ -8,7 +8,6 @@ export const config: WebdriverIO.Config = {
     // Runner Configuration
     // ====================
     //
-    runner: 'browser',
 
     // ============
     // Specs
