@@ -21,7 +21,6 @@ export const config: WebdriverIO.Config = {
     // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
     capabilities: [
         {
-            maxInstances: 5,
             platformName: 'Android',
             // For more information about the supported Sauce Labs capabilities see:
             // https://wiki.saucelabs.com/display/DOCS/Appium+Capabilities+for+Real+Device+Testing

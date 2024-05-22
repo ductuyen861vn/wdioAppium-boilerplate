@@ -1,3 +1,4 @@
+// @ts-ignore
 import type { Options } from '@wdio/types';
 
 /**
@@ -11,6 +12,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     //
+    runner: 'local',
+    port:4723,
     // ==================
     // Specify Test Files
     // ==================

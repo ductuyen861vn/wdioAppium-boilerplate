@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
         "sourceMap": false,
-        "target": "es2020",
+        "target": "ESNext",
         "module": "NodeNext",
         "moduleResolution": "Node16",
         "removeComments": true,
         "noImplicitAny": true,
         "strictPropertyInitialization": true,
         "strictNullChecks": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
         "types": [
             "node",
             "@wdio/types",
@@ -20,5 +22,9 @@
     "include": [
         "./config/**/*.ts",
         "./tests/**/*.ts"
-    ]
+    ],
+    "ts-node": {
+        // Tell ts-node CLI to install the --loader automatically, explained below
+        "esm": true
+    }
 }

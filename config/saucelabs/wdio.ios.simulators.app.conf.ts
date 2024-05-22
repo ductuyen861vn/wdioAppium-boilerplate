@@ -40,5 +40,5 @@ export const config: WebdriverIO.Config = {
         },
     ],
 
-    maxInstances: 25
+    maxInstances: 1
 };
