@@ -47,6 +47,7 @@
         "@wdio/testingbot-service": "^8.36.1",
         "allure-commandline": "^2.29.0",
         "appium": "^2.5.4",
+        "appium-chromedriver": "^5.6.54",
         "appium-uiautomator2-driver": "latest",
         "appium-xcuitest-driver": "latest",
         "chromedriver": "^125.0.2",

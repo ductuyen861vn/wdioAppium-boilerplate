@@ -7,10 +7,10 @@ export const config: WebdriverIO.Config = {
     // ============
     // Connection server
     // ============
-    port: 4723,
-    hostname: 'localhost',
-    path: '/wd/hub',
-    protocol: 'http',
+    hostname: 'hoang.tran:9830807a-109a-4b7b-a545-8f1e5a05d7ab@api.kobiton.com',
+    path:'/wd/hub',
+    protocol:'https',
+    port:443,
 
     // ============
     // Specs
@@ -30,22 +30,19 @@ export const config: WebdriverIO.Config = {
             // NOTE: Config for device on Kobiton Server
             // Change deviceName, udid, platformVersion to map to specific device
             // Change 'appium:app':'id (cloud)' / 'local path' to install whatever application package on cloud/local server (For service, you have to upload file to their repository before installing)
-            platformName: 'Android',
-            'appium:browserName': 'Chrome',
-            'appium:deviceName': 'GalaxyA03s',
-            'appium:platformVersion': '11',
-            'appium:orientation': 'PORTRAIT',
-            'appium:automationName': 'UiAutomator2',
-            'appium:autoGrantPermissions': true,
+            platformName: 'iOS',
+            // 'appium:deviceName': 'iPhone 11',
+            // "appium:udid":'00008030-001E18300108802E',//11Pro
+            "appium:udid":'00008110-000E7CC92EB9401E',//13 Pro
+            // 'appium:platformVersion': '17.0',
+            'appium:orientation': 'portrait',
+            'appium:autoGrantPermissions':true,
+            'appium:autoWebview': true,
+            'appium:browserName': 'safari',
 
-            // The path to the app
-            // 'appium:app': join(
-            //     process.cwd(),
-            //     'apps',
-            //     //
-            //     // NOTE: Change this name according to the app version you downloaded
-            //     'r6androidbuild113281.apk',
-            // ),
+
+            // The path to the app or ID of app on cloud service
+            // 'appium:app': "kobiton-store:v655419",
 
             //Other configs
             'appium:newCommandTimeout': 3000,
@@ -54,16 +51,7 @@ export const config: WebdriverIO.Config = {
             // You have to disable 'appium:app' to use this one
             // To get appActivity, appPackage, please contact app dev or use tools to inspect app information
             // 'appium:appActivity': "appActivity",
-            // 'appium:appPackage': "com.android.chrome",
-
-            // The path of chromeDriver
-            'appium:chromedriverExecutable':join(
-                process.cwd(),
-                'node_modules','chromedriver','bin',
-                //
-                // NOTE: Change this name according to the app version you downloaded
-                'chromedriver',
-            ),
+            // 'appium:appPackage': "appPackage",
         },
     ],
 };
