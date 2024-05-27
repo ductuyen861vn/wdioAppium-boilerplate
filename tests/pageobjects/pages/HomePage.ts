@@ -14,7 +14,7 @@ class HomePage extends Page {
         console.log("Opening Home Page")
         await browser.url('https://google.com/');
         console.log("Maximize Window")
-        await browser.maximizeWindow()
+        // await browser.maximizeWindow()
     }
 }
 

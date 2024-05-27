@@ -26,7 +26,7 @@
     ],
     "type": "module",
     "scripts": {
-        "wdioMobileAndroidLocal": "wdio run config/wdio.mobile.android.local.conf.ts",
+        "wdioMobileAndroidLocal": "wdio run config/wdio.mobile.app.android.local.conf.ts",
         "wdioBrowserChrome": "wdio run config/wdio.web.chrome.conf.ts",
         "lint": "eslint config tests"
     },
@@ -40,6 +40,7 @@
         "@wdio/cli": "^8.36.1",
         "@wdio/globals": "^8.36.1",
         "@wdio/local-runner": "^8.36.1",
+        "@wdio/logger": "^8.38.0",
         "@wdio/mocha-framework": "^8.36.1",
         "@wdio/sauce-service": "^8.36.1",
         "@wdio/spec-reporter": "^8.36.1",
@@ -48,6 +49,7 @@
         "appium": "^2.5.4",
         "appium-uiautomator2-driver": "latest",
         "appium-xcuitest-driver": "latest",
+        "chromedriver": "^125.0.2",
         "eslint-plugin-wdio": "^8.24.12",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.5",
