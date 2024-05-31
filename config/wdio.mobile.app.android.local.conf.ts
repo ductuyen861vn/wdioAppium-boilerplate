@@ -45,7 +45,7 @@ export const config: WebdriverIO.Config = {
                 'apps',
                 //
                 // NOTE: Change this name according to the app version you downloaded
-                'r6androidbuild113281.apk',
+                'ThreadAndroidV0.apk',
             ),
 
             //Other configs

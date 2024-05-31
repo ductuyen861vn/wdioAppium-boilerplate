@@ -2,7 +2,7 @@ class HomePageObjects {
     /**
      * define elements
      */
-    get txtSearch () { return $('[name="q"]'); }
+    get txtSearch () { return $('//textarea[@name=\'q\']'); }
 }
 
 export default new HomePageObjects();

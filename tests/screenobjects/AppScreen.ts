@@ -1,3 +1,7 @@
+import SystemObjects from "./ios/objects/SystemObjects.js";
+import logger from "@wdio/logger";
+const log = logger('JoinStudyScreen');
+
 export default class AppScreen {
     private selector: string;
 
@@ -14,5 +18,12 @@ export default class AppScreen {
         return $(this.selector).waitForDisplayed({
             reverse: !isShown,
         });
+    }
+
+    async closeKeyboardIfExist(isShown = true): Promise<void> {
+        log.info("Close keyboard button if exists", isShown);
+        if (await driver.isKeyboardShown()){
+            if (await SystemObjects.btnDoneKeyboard.isDisplayed()) await SystemObjects.btnDoneKeyboard.click()
+        }
     }
 }

@@ -1,6 +1,10 @@
 // @ts-ignore
 import type {Options} from '@wdio/types';
 
+const retries = process.env.RETRIES || process.env.DEFAULT_RETRIES;
+const defaultImplicitWait = process.env.IMPLICIT_WAIT || process.env.DEFAULT_SECOND_IMPLICIT_WAIT;
+const debug = process.env.DEBUG
+
 /**
  * All not needed configurations, for this boilerplate, are removed.
  * If you want to know which configuration options you have then you can
@@ -25,20 +29,16 @@ export const config: Options.Testrunner = {
      * NOTE: This is just a place holder and will be overwritten by each specific configuration
      */
     specs: [],
+
     //
     // ============
     // Capabilities
     // ============
-    // The capabilities are specified in:
-    // - wdio.android.browser.conf.ts
-    // - wdio.android.app.conf.ts
-    // - wdio.ios.browser.conf.ts
-    // - wdio.ios.app.conf.ts
-    //
     /**
      * NOTE: This is just a place holder and will be overwritten by each specific configuration
      */
     capabilities: [],
+
     //
     // ===================
     // Test Configurations
@@ -68,7 +68,7 @@ export const config: Options.Testrunner = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com',
+    baseUrl: '',
     // Default timeout for all waitFor* commands.
     /**
      * NOTE: This has been increased for more stable Appium Native app
@@ -110,11 +110,20 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
-    }]],
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+        }],
+        ['junit', {
+            outputDir: 'junit-results',
+            outputFileFormat: function () {
+                return `test-results.xml`
+            }
+        }]
+    ],
     // Options to be passed to Mocha.
     mochaOpts: {
         ui: 'bdd',
@@ -122,7 +131,9 @@ export const config: Options.Testrunner = {
          * NOTE: This has been increased for more stable Appium Native app
          * tests because they can take a bit longer.
          */
-        timeout: 3 * 60 * 1000, // 3min
+        execArgv: debug ? ['--inspect'] : [],
+        timeout: Number(defaultImplicitWait) * 1000,
+        retries: Number(retries),
     },
     //
     // =====

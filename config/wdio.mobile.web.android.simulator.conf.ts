@@ -30,8 +30,8 @@ export const config: WebdriverIO.Config = {
             // Change deviceName, udid, platformVersion to map to specific device
             platformName: 'Android',
             'appium:browserName': 'Chrome',
-            'appium:deviceName': 'GalaxyA03s',
-            'appium:platformVersion': '11',
+            'appium:deviceName': 'emulator-5556',
+            'appium:platformVersion': '12',
             'appium:orientation': 'PORTRAIT',
             'appium:automationName': 'UiAutomator2',
             'appium:autoGrantPermissions': true,

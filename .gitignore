@@ -18,5 +18,6 @@ chromeDriver
 .tmp
 *.mp4
 
-#allure report
+#report
 allure-results/
+junit-results/
