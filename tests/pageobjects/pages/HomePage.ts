@@ -1,8 +1,9 @@
 import Page from '../page.js';
 import HomePageObjects from '../objects/HomePageObjects.js';
+import {browser} from "@wdio/globals";
 
 class HomePage extends Page {
-    async enterValueToSearchBox (value: string){
+    async enterValueToSearchBox(value: string) {
         console.log("Entering value to search :" + value);
         await HomePageObjects.txtSearch.setValue(value)
     }
@@ -14,7 +15,7 @@ class HomePage extends Page {
         console.log("Opening Home Page")
         await browser.url('https://google.com/');
         console.log("Maximize Window")
-        // await browser.maximizeWindow()
+        if (!browser.isAndroid && !browser.isIOS) await browser.maximizeWindow()
     }
 }
 

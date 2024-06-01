@@ -1,13 +1,13 @@
 {
-    "name": "appium-boilerplate",
-    "version": "5.3.1",
-    "author": "Wim Selles <wim@wswebcreation.nl>",
-    "license": "MIT",
-    "description": "Boilerplate project to run WebdriverIO tests with Appium to test native applications on iOS and Android",
-    "homepage": "https://github.com/webdriverio/appium-boilerplate#readme",
+    "name": "thread-participant-app",
+    "version": "0.0.1",
+    "author": "Thread",
+    "license": "Thread",
+    "description": "Thread project to run WebdriverIO tests with Appium to test native applications on iOS and Android",
+    "homepage": "",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/webdriverio/appium-boilerplate.git"
+        "url": "TBD"
     },
     "bugs": {
         "url": "https://github.com/webdriverio/appium-boilerplate/issues"
@@ -26,8 +26,8 @@
     ],
     "type": "module",
     "scripts": {
-        "wdioMobileAndroidLocal": "wdio run config/wdio.mobile.app.android.local.conf.ts",
-        "wdioWeb": "wdio run config/wdio.web.chrome.conf.ts",
+        "wdioMobileAndroidLocal": "wdio run config/local/wdio.mobile.app.android.local.conf.ts",
+        "wdioWeb": "wdio run config/local/wdio.destop.web.local.conf.ts",
         "lint": "eslint config tests"
     },
     "devDependencies": {

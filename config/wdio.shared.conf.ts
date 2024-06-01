@@ -2,7 +2,7 @@
 import type {Options} from '@wdio/types';
 
 const retries = process.env.RETRIES || process.env.DEFAULT_RETRIES;
-const defaultImplicitWait = process.env.IMPLICIT_WAIT || process.env.DEFAULT_SECOND_IMPLICIT_WAIT;
+const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE || process.env.DEFAULT_SECOND_IMPLICIT_WAIT_MOBILE;
 const debug = process.env.DEBUG
 
 /**
@@ -11,11 +11,11 @@ const debug = process.env.DEBUG
  * check https://webdriver.io/docs/configurationfile
  */
 export const config: Options.Testrunner = {
-    //
     // ====================
     // Runner Configuration
     // ====================
-    //
+
+
     // ==================
     // Specify Test Files
     // ==================
@@ -24,22 +24,17 @@ export const config: Options.Testrunner = {
     // - wdio.android.app.conf.ts
     // - wdio.ios.browser.conf.ts
     // - wdio.ios.app.conf.ts
-    //
-    /**
-     * NOTE: This is just a place holder and will be overwritten by each specific configuration
-     */
+    // NOTE: This is just a place holder and will be overwritten by each specific configuration
     specs: [],
 
-    //
+
     // ============
     // Capabilities
     // ============
-    /**
-     * NOTE: This is just a place holder and will be overwritten by each specific configuration
-     */
+    // NOTE: This is just a place holder and will be overwritten by each specific configuration
     capabilities: [],
 
-    //
+
     // ===================
     // Test Configurations
     // ===================
@@ -90,6 +85,7 @@ export const config: Options.Testrunner = {
     // - wdio.shared.local.appium.conf.ts
     // - wdio.shared.sauce.conf.ts
     // configuration files
+    // Issue 1: https://github.com/webdriverio/webdriverio/issues/12227 Can not run debugger with service 'appium' -> start Appium manually
     services: [],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -135,7 +131,8 @@ export const config: Options.Testrunner = {
         timeout: Number(defaultImplicitWait) * 1000,
         retries: Number(retries),
     },
-    //
+
+
     // =====
     // Hooks
     // =====
@@ -147,4 +144,11 @@ export const config: Options.Testrunner = {
     /**
      * NOTE: No Hooks are used in this project, but feel free to add them if you need them.
      */
+    before: async ()=> {
+        // Only update the setting for Android, this is needed to reduce the timeout for the UiSelector locator strategy,
+        // which is also used in certain tests, so it will not wait for 10 seconds if it can't find an element
+        if (!driver.isAndroid && !driver.isIOS){
+            await driver.
+        }
+    },
 };

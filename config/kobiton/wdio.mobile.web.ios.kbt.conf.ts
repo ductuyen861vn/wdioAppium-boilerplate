@@ -1,5 +1,4 @@
-import {join} from 'node:path';
-import {config as baseConfig} from './wdio.mobile.web.shared.conf.js';
+import {config as baseConfig} from '../wdio.mobile.web.shared.conf.js';
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,
@@ -15,20 +14,17 @@ export const config: WebdriverIO.Config = {
     // ============
     // Specs
     // ============
-    specs: ['../tests/specs/web/**/*.ts'],
+    specs: ['../../tests/specs/web/**/*.ts'],
 
     // ============
     // Capabilities
     // ============
     // For all capabilities please check
-    // https://github.com/appium/appium-uiautomator2-driver
+    // https://github.com/appium/appium-xcuitest-driver
+    // NOTE: Config for device on Kobiton Server
+    // Please use capability generator on Kobiton website
     capabilities: [
         {
-            // The defaults you need to have in your config
-            // For W3C the appium capabilities need to have an extension prefix
-            // This is `appium:` for all Appium Capabilities which can be found here
-            // NOTE: Config for device on Kobiton Server
-            // Change deviceName, udid, platformVersion to map to specific device
             'appium:platformName': 'iOS',
             // 'appium:deviceName': 'iPhone 11',
             // "appium:udid":'00008030-001E18300108802E',//11Pro

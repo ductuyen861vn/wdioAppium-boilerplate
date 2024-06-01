@@ -7,17 +7,17 @@ describe('WebdriverIO and Appium research', () => {
     it('should be open web successfully - Test 1', async () => {
         console.log("waiting for 5 seconds")
         await HomePage.openHomePage()
-        await HomePage.enterValueToSearchBox("WebdriverIO")
+        await HomePage.enterValueToSearchBox("WebdriverIO-FailCase-Step1")
         await HomePageObjects.txtSearch.clearValue()
-        await HomePageObjects.txtSearch.setValue("WebdriverIO V8")
-        await expect($("//ToBeFailed")).toBeDisplayed()
+        await HomePageObjects.txtSearch.setValue("WebdriverIO-FailCase-Step2")
+        await expect($("//ToBeFailed")).toBeDisplayed({wait:5*1000, message:"Force fail to test"})
     });
 
     it('should be open web successfully - Test 2', async () => {
         console.log("waiting for 5 seconds")
         await HomePage.openHomePage()
-        await HomePage.enterValueToSearchBox("WebdriverIO")
+        await HomePage.enterValueToSearchBox("WebdriverIO-PassCase-Step1")
         await HomePageObjects.txtSearch.clearValue()
-        await HomePageObjects.txtSearch.setValue("WebdriverIO V8")
+        await HomePageObjects.txtSearch.setValue("WebdriverIO-PassCase-Step2")
     });
 });

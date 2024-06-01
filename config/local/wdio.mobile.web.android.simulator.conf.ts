@@ -1,5 +1,5 @@
 import {join} from 'node:path';
-import {config as baseConfig} from './wdio.mobile.web.shared.conf.js';
+import {config as baseConfig} from '../wdio.mobile.web.shared.conf.js';
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,
@@ -15,7 +15,7 @@ export const config: WebdriverIO.Config = {
     // ============
     // Specs
     // ============
-    specs: ['../tests/specs/web/**/*.ts'],
+    specs: ['../../tests/specs/web/**/*.ts'],
 
     // ============
     // Capabilities
@@ -24,10 +24,6 @@ export const config: WebdriverIO.Config = {
     // https://github.com/appium/appium-uiautomator2-driver
     capabilities: [
         {
-            // The defaults you need to have in your config
-            // For W3C the appium capabilities need to have an extension prefix
-            // This is `appium:` for all Appium Capabilities which can be found here
-            // Change deviceName, udid, platformVersion to map to specific device
             platformName: 'Android',
             'appium:browserName': 'Chrome',
             'appium:deviceName': 'emulator-5556',
@@ -39,18 +35,10 @@ export const config: WebdriverIO.Config = {
             //Other configs
             'appium:newCommandTimeout': 3000,
 
-            // Change appActivity, appPackage to start existing application on device without reinstall
-            // You have to disable 'appium:app' to use this one
-            // To get appActivity, appPackage, please contact app dev or use tools to inspect app information
-            // 'appium:appActivity': "appActivity",
-            // 'appium:appPackage': "com.android.chrome",
-
-            // The path of chromeDriver, this is required to run browser at local
+            // The path of chromeDriver, if npm does not download latest chromedriver, please overwrite it by downloading latest version yourself
             'appium:chromedriverExecutable':join(
                 process.cwd(),
                 'node_modules','chromedriver','bin',
-                //
-                // NOTE: Change this name according to the app version you downloaded
                 'chromedriver',
             ),
         },

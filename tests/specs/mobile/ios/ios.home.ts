@@ -13,7 +13,7 @@ describe('Verify buttons on Home Screen', () => {
         await HomeScreen.clickOnButtonJoinStudy()
     });
 
-    it('should return error message if login with invalid user', async () => {
+    it('should return error message if login by invalid user', async () => {
         await HomeScreen.clickOnButtonSignIn()
         await LoginScreen.submitLogin("InvalidUser@gmail.com", "InvalidPassword")
         await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })

@@ -1,5 +1,4 @@
-import {join} from 'node:path';
-import {config as baseConfig} from './wdio.mobile.web.shared.conf.js';
+import {config as baseConfig} from '../wdio.mobile.app.shared.conf.js';
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,
@@ -15,21 +14,19 @@ export const config: WebdriverIO.Config = {
     // ============
     // Specs
     // ============
-    specs: ['../tests/specs/web/**/*.ts'],
+    specs: [
+        '../../tests/specs/mobile/android/**/*.ts',
+    ],
 
     // ============
     // Capabilities
     // ============
     // For all capabilities please check
     // https://github.com/appium/appium-uiautomator2-driver
-    // To run multiple devices, please add multiple capabilities
+    // NOTE: Config for device on Kobiton Server
+    // Please use capability generator on Kobiton website
     capabilities: [
         {
-            // The defaults you need to have in your config
-            // For W3C the appium capabilities need to have an extension prefix
-            // This is `appium:` for all Appium Capabilities which can be found here
-            // NOTE: Config for device on Kobiton Server
-            // Change deviceName, udid, platformVersion to map to specific device
             platformName: 'Android',
             'appium:deviceName': 'Pixel 5',
             "appium:udid": '0A291FDD4001KN',
@@ -37,10 +34,27 @@ export const config: WebdriverIO.Config = {
             'appium:orientation': 'PORTRAIT',
             'appium:automationName': 'UiAutomator2',
             'appium:autoGrantPermissions': true,
-            'appium:browserName': 'chrome',
+
+            // The path to the app or ID of app on cloud service
+            'appium:app': "kobiton-store:v673891",
 
             //Other configs
             'appium:newCommandTimeout': 3000,
-        }
+        },
+        {
+            platformName: 'Android',
+            'appium:deviceName': 'Pixel 4a',
+            "appium:udid": '0A011JEC206089',
+            'appium:platformVersion': '13',
+            'appium:orientation': 'PORTRAIT',
+            'appium:automationName': 'UiAutomator2',
+            'appium:autoGrantPermissions': true,
+
+            // The path to the app or ID of app on cloud service
+            'appium:app': "kobiton-store:v673891",
+
+            //Other configs
+            'appium:newCommandTimeout': 3000,
+        },
     ],
 };
