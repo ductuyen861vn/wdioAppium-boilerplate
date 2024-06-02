@@ -1,5 +1,7 @@
 import {config as baseConfig} from './wdio.shared.conf.js';
 import logger from '@wdio/logger'
+import ScreenShotUti from "../tests/utilities/ScreenShotUti.js";
+import process from "node:process";
 
 const log = logger('wdio.mobile-shared.conf');
 
@@ -25,7 +27,8 @@ export const config: WebdriverIO.Config = {
     /**
      * await driver.execute('mobile: terminateApp', { appId: appPackage });//Work on Appium 2x, not work with Appium 1.22 (max version on Browserstack)
      */
-    afterTest: async ()=> {
+    afterTest: async function (test, context, {error, result, duration, passed, retries}) {
+        await ScreenShotUti.getScreenShotAsFailed(test,context, error);
         if (driver.isAndroid){
             log.info("Reset Android Application")
             await driver.closeApp()

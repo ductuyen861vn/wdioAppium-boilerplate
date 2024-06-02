@@ -18,4 +18,9 @@ describe('Verify buttons on Home Screen', () => {
         await LoginScreen.submitLogin("InvalidUser@gmail.com", "InvalidPassword")
         await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })
     });
+
+    it('to be failed test case for IOS', async () => {
+        await HomeScreen.clickOnButtonSignIn()
+        // await expect($('[label="ToBeFailed"]')).toBeDisplayed({ wait: 2 * 1000 , message: "ToBeFailed" })
+    });
 });

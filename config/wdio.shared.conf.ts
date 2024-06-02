@@ -1,8 +1,10 @@
 // @ts-ignore
 import type {Options} from '@wdio/types';
-import {join} from 'node:path';
-import {DateTimeUti} from "../tests/utilities/DateTimeUti.js";
 import * as process from "node:process";
+import ScreenShotUti from "../tests/utilities/ScreenShotUti.js";
+import allure from "allure-commandline";
+import fs from "fs-extra";
+import path from "path";
 
 const retries = process.env.RETRIES || process.env.DEFAULT_RETRIES;
 const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE || process.env.DEFAULT_SECOND_IMPLICIT_WAIT_MOBILE;
@@ -114,7 +116,7 @@ export const config: Options.Testrunner = {
         ['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
+            disableWebdriverScreenshotsReporting: false,
         }],
         ['junit', {
             outputDir: 'junit-results',
@@ -155,10 +157,31 @@ export const config: Options.Testrunner = {
 
     //Take screenshot if failed
     afterTest: async function (test, context, {error, result, duration, passed, retries}) {
-        let fileName = test.title + DateTimeUti.getRandomFormattedDateTime(DateTimeUti.DATE_PATTERN_2)
-        let path: string = join(process.cwd(), process.env.DEFAULT_SCREENSHOT_PATH + "",fileName + process.env.DEFAULT_SCREENSHOT_EXTENSION)
-        if (error) {
-            await driver.saveScreenshot(path);
+        await ScreenShotUti.getScreenShotAsFailed(test,context, error);
+    },
+
+    onComplete: function (exitCode, config, capabilities, results) {
+        const resultsDir = path.join(process.cwd(), 'allure-results');
+        const historyDir = path.join(resultsDir, 'history');
+        const historyBackupDir = path.join(process.cwd(), 'history_backup');
+
+        if (fs.existsSync(historyBackupDir)) {
+            fs.copySync(historyBackupDir, historyDir);
         }
-    }
+    },
+
+    onPrepare: function (config, capabilities) {
+        const resultsDir = path.join(process.cwd(), 'allure-results');
+        const historyDir = path.join(resultsDir, 'history');
+
+        // Ensure the history directory exists before the test run
+        if (!fs.existsSync(historyDir)) {
+            fs.mkdirSync(historyDir);
+        }
+
+        // Copy the previous history to the new results directory
+        if (fs.existsSync(historyDir)) {
+            fs.copySync(historyDir, path.join(process.cwd(), 'history_backup'));
+        }
+    },
 };

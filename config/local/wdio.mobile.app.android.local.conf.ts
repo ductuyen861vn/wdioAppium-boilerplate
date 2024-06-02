@@ -1,4 +1,5 @@
 import {config as baseConfig} from '../wdio.mobile.app.shared.conf.js';
+import {join} from "node:path";
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,

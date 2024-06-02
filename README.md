@@ -1,9 +1,6 @@
-# Appium Boilerplate
+# Thread Automation Project
 
-**NOTE:** This boilerplate is for Webdriver V8 where the tests are written with `async`/`await` and TypeScript. If you need a boilerplate for older versions, check the following:
-
-- V7 (JavaScript) please click [here](https://github.com/webdriverio/appium-boilerplate/tree/v7)
-- V7 (TypeScript, sync mode) please click [here](https://github.com/webdriverio/appium-boilerplate/tree/sync-mode)
+**NOTE:** This project is for Webdriver V8 where the tests are written with `async`/`await` and TypeScript.
 
 Boilerplate project to run Appium tests together with WebdriverIO for:
 
@@ -12,24 +9,21 @@ Boilerplate project to run Appium tests together with WebdriverIO for:
 - Android Chrome and iOS Safari browser ([check here](./README.md#automating-chrome-or-safari))
 
 > [!IMPORTANT]
-> This boilerplate uses the WebdriverIO native demo app which can be found [here](https://github.com/webdriverio/native-demo-app).
-
-> [!NOTE]
-> This boilerplate only handles local execution on 1 em/simulator at a time, not parallel execution. For more info about that Google on setting up a grid with Appium.
+> This boilerplate uses the WebdriverIO native app which can be found in folder root/app/
 
 ## Based on
 
-This boilerplate is currently based on:
+This project is currently based on:
 
 - **WebdriverIO:** `8.x`
-- **Appium:** `2.x`
+- **Appium Local:** `2.x`, also pair well with Appium Browser Stack 1.22
 
 ## Installation
 
 1. Clone this project by running
 
 ```sh
-git clone https://github.com/webdriverio/appium-boilerplate.git
+git clone TBD
 ```
 
 2. Install all dependencies
@@ -42,7 +36,7 @@ npm install
 > Use the [appium-installer](https://github.com/AppiumTestDistribution/appium-installer) package to setup Appium on your local machine. This will also help you configure Android Emulators/ iOS Simulators.
 
 > [!NOTE]
-> You don't need Appium installed on you local machine When running test in a cloud
+> You don't need Appium installed on you local machine When running test in a cloud (BrowserStack or Kobiton)
 
 3. Create a `./apps` directory at the root of this project. Download the app files (`.zip` / `.apk`) with version >= `1.0.0`, which can be found [here](https://github.com/webdriverio/native-demo-app/releases), into the `./apps` folder.
 
