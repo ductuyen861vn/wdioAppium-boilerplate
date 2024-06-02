@@ -1,5 +1,8 @@
 // @ts-ignore
 import type {Options} from '@wdio/types';
+import {join} from 'node:path';
+import {DateTimeUti} from "../tests/utilities/DateTimeUti.js";
+import * as process from "node:process";
 
 const retries = process.env.RETRIES || process.env.DEFAULT_RETRIES;
 const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE || process.env.DEFAULT_SECOND_IMPLICIT_WAIT_MOBILE;
@@ -144,11 +147,18 @@ export const config: Options.Testrunner = {
     /**
      * NOTE: No Hooks are used in this project, but feel free to add them if you need them.
      */
-    before: async ()=> {
-        // Only update the setting for Android, this is needed to reduce the timeout for the UiSelector locator strategy,
-        // which is also used in certain tests, so it will not wait for 10 seconds if it can't find an element
-        if (!driver.isAndroid && !driver.isIOS){
-            await driver.
-        }
+    before: async () => {
     },
+
+    after: async () => {
+    },
+
+    //Take screenshot if failed
+    afterTest: async function (test, context, {error, result, duration, passed, retries}) {
+        let fileName = test.title + DateTimeUti.getRandomFormattedDateTime(DateTimeUti.DATE_PATTERN_2)
+        let path: string = join(process.cwd(), process.env.DEFAULT_SCREENSHOT_PATH + "",fileName + process.env.DEFAULT_SCREENSHOT_EXTENSION)
+        if (error) {
+            await driver.saveScreenshot(path);
+        }
+    }
 };

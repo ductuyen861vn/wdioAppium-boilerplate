@@ -21,3 +21,5 @@ chromeDriver
 #report
 allure-results/
 junit-results/
+
+#screenshot

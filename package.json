@@ -55,6 +55,7 @@
         "appium-webdriveragent": "^8.6.0",
         "appium-xcuitest-driver": "latest",
         "chromedriver": "^125.0.2",
+        "date-fns": "^3.6.0",
         "eslint-plugin-wdio": "^8.24.12",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.5",
