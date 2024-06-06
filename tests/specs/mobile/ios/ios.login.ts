@@ -2,7 +2,8 @@ import HomeScreen from "../../../screenobjects/ios/screens/HomeScreen.js";
 import LoginScreen from "../../../screenobjects/ios/screens/LoginScreen.js";
 import {JsonUtils} from "../../../helpers/JsonUtils.js";
 import {BaseTest} from "../../BaseTest.js";
-import {Constants} from "../../../helpers/Constants.js";
+import {languageSettings} from "../../../helpers/LanguageSettings.js";
+
 const testData = await JSON.parse(await JsonUtils.readTestDataFile());
 
 export class IOSLoginPage extends BaseTest {
@@ -27,6 +28,8 @@ export class IOSLoginPage extends BaseTest {
 
             runs.forEach(function (run) {
                 it('should return error message if login by invalid user ' + run.userName, async () => {
+                    // await languageSettings.setLanguage("fr")
+                    // await HomeScreen.initialize()
                     await HomeScreen.clickOnButtonSignIn()
                     await LoginScreen.submitLogin(run.participant.username, run.participant.password)
                     await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })

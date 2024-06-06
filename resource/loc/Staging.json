@@ -1,12 +1,26 @@
 {
-  "TC_0001": {
-    "participant1": {
-      "username": "participant1@gmail.com",
-      "password": "PW1@123"
-    },
-    "participant2": {
-      "username": "participant2@gmail.com",
-      "password": "PW2@123"
+  "EN-US": {
+    "TC_0001": {
+      "homeScreen": {
+        "txtJoinStudy": "Join Study",
+        "txtSignIn": "Sign In"
+      },
+      "loginScreen": {
+        "txtSignIn": "Sign In",
+        "txtForgotPassword": "Forgot Password"
+      }
+    }
+  },
+  "FR-FR": {
+    "TC_0001": {
+      "homeScreen": {
+        "txtJoinStudy": "FR-FR",
+        "txtSignIn": "FR-FR"
+      },
+      "loginScreen": {
+        "txtSignIn": "FR-FR",
+        "txtForgotPassword": "FR-FR"
+      }
     }
   }
 }

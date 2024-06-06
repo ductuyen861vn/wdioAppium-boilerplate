@@ -1,4 +1,4 @@
-import AppScreen from "../../AppScreen.js";
+import BaseScreen from "../../BaseScreen.js";
 import LoginPageObjects from "../objects/LoginScreenObjects.js";
 import logger from "@wdio/logger";
 
@@ -8,7 +8,7 @@ const SELECTORS = {
     SCREEN: '~Login-screen',
 };
 
-export class LoginScreen extends AppScreen {
+export class LoginScreen extends BaseScreen {
     constructor () {
         super(SELECTORS.SCREEN);
     }

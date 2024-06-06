@@ -1,4 +1,4 @@
-class JoinStudyScreenObjects {
+export class JoinStudyScreenObjectsEN {
     /**
      * define elements
      */
@@ -11,4 +11,4 @@ class JoinStudyScreenObjects {
     get btnNo () { return $('[label=" No"]'); }
 
 }
-export default new JoinStudyScreenObjects();
+export default new JoinStudyScreenObjectsEN();

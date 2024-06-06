@@ -1,7 +1,7 @@
-import AppScreen from './AppScreen.js';
+import BaseScreen from './BaseScreen.js';
 const SWIPE_SCREEN_SELECTOR = '~Swipe-screen';
 
-class SwipeScreen extends AppScreen {
+class SwipeScreen extends BaseScreen {
     constructor () {
         super(SWIPE_SCREEN_SELECTOR);
     }

@@ -1,11 +1,11 @@
-import AppScreen from './AppScreen.js';
+import BaseScreen from './BaseScreen.js';
 import {Gestures} from '../helpers/Gestures.js';
 
 const SELECTORS = {
     SCREEN: '~Login-screen',
 };
 
-class LoginScreen extends AppScreen {
+class LoginScreen extends BaseScreen {
     constructor () {
         super(SELECTORS.SCREEN);
     }

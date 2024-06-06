@@ -1,6 +1,6 @@
-import AppScreen from './AppScreen.js';
+import BaseScreen from './BaseScreen.js';
 
-class HomeScreen extends AppScreen {
+class HomeScreen extends BaseScreen {
     constructor () {
         super('~Home-screen');
     }

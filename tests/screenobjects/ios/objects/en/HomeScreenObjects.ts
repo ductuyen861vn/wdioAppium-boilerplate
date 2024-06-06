@@ -1,4 +1,4 @@
-class HomeScreenObjects {
+export class HomeScreenObjectsEN {
     /**
      * define elements
      */
@@ -7,4 +7,4 @@ class HomeScreenObjects {
     get btnJoinStudy () { return $('[label = "Join Study"]'); }
     get btnSignIn () { return $('[label = "Sign In"]'); }
 }
-export default new HomeScreenObjects();
+export default new HomeScreenObjectsEN();

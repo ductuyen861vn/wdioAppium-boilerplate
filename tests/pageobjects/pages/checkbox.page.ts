@@ -1,6 +1,10 @@
-import Page from '../page.js';
+import BasePage from '../BasePage.js';
 
-class CheckboxPage extends Page {
+class CheckboxPage extends BasePage {
+    constructor() {
+        super();
+    }
+
     /**
      * define elements
      */

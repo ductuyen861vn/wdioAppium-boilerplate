@@ -1,6 +1,6 @@
-import Page from '../page.js';
+import BasePage from '../BasePage.js';
 
-class DynamicPage extends Page {
+class DynamicPage extends BasePage {
     /**
      * define elements
      */

@@ -1,6 +1,10 @@
-import Page from '../page.js';
+import BasePage from '../BasePage.js';
 
-class FormPage extends Page {
+class FormPage extends BasePage {
+    constructor() {
+        super();
+    }
+
     /**
      * define elements
      */

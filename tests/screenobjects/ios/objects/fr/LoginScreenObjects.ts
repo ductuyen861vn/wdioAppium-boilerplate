@@ -1,4 +1,6 @@
-class LoginScreenObjects {
+import {LoginScreenObjectsEN} from "../en/LoginScreenObjects.js";
+
+class LoginScreenObjectsFR extends LoginScreenObjectsEN{
     /**
      * define elements
      */
@@ -8,4 +10,4 @@ class LoginScreenObjects {
     get btnForgotPassword () { return $('//XCUIElementTypeButton[@name="Forgot Password"]'); }
     get btnForgotUserName () { return $('//XCUIElementTypeButton[@name=" Forgot Username"]'); }
 }
-export default new LoginScreenObjects();
+export default new LoginScreenObjectsFR();

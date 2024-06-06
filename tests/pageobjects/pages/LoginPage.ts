@@ -1,6 +1,8 @@
-import Page from '../page.js';
-class LoginPage extends Page {
-
+import BasePage from '../BasePage.js';
+class LoginPage extends BasePage {
+    constructor() {
+        super();
+    }
 }
 
 export default new LoginPage();

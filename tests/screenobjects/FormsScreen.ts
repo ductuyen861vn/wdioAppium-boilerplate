@@ -1,10 +1,10 @@
-import AppScreen from './AppScreen.js';
+import BaseScreen from './BaseScreen.js';
 
 const SELECTORS = {
     SCREEN: '~Forms-screen',
 };
 
-class FormsScreen extends AppScreen {
+class FormsScreen extends BaseScreen {
     constructor () {
         super(SELECTORS.SCREEN);
     }

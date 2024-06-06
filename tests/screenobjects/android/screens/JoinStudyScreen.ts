@@ -1,4 +1,4 @@
-import AppScreen from "../../AppScreen.js";
+import BaseScreen from "../../BaseScreen.js";
 import logger from "@wdio/logger";
 import JoinStudyScreenObjects from "../objects/JoinStudyScreenObjects.js";
 
@@ -8,7 +8,7 @@ const SELECTORS = {
     SCREEN: '~JoinStudyScreen-screen',
 };
 
-class JoinStudyScreen extends AppScreen {
+class JoinStudyScreen extends BaseScreen {
     constructor() {
         super(SELECTORS.SCREEN);
     }

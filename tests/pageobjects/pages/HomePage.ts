@@ -1,8 +1,12 @@
-import Page from '../page.js';
+import BasePage from '../BasePage.js';
 import HomePageObjects from '../objects/HomePageObjects.js';
 import {browser} from "@wdio/globals";
 
-class HomePage extends Page {
+class HomePage extends BasePage {
+    constructor() {
+        super();
+    }
+
     async enterValueToSearchBox(value: string) {
         console.log("Entering value to search :" + value);
         await HomePageObjects.txtSearch.setValue(value)
