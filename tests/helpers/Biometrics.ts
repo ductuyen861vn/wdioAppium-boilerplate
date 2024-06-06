@@ -1,4 +1,4 @@
-import { executeInHomeScreenContext } from './CommonUtils.js';
+import {executeInHomeScreenContext} from './CommonUtils.js';
 import {Constants} from "./Constants.js";
 
 class Biometrics {

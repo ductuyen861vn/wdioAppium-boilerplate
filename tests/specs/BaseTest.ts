@@ -15,8 +15,10 @@ export class BaseTest {
         log.info("Setup")
         log.info("Loading test data file")
         this.testData = await JSON.parse(await JsonUtils.readTestDataFile());
+
         log.info("Loading loc file")
         this.loc = await JSON.parse(await JsonUtils.readLOCFile())
+
         log.info("Loading Environment file")
         this.environment = await JSON.parse(await JsonUtils.readEnvironmentFile())
         return this

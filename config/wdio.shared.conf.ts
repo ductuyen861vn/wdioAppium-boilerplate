@@ -1,6 +1,6 @@
 import type {Options} from '@wdio/types';
 import * as process from "node:process";
-import ScreenShotUti from "../tests/helpers/ScreenShotUtils.js";
+import {ScreenShotUtils} from "../tests/helpers/ScreenShotUtils.js";
 // @ts-ignore
 import fs from "fs-extra";
 import path from "path";
@@ -156,7 +156,7 @@ export const config: Options.Testrunner = {
 
     //Take screenshot if failed, support local run, if using BS, check screenshot / record file on BS instead
     afterTest: async function (test, context, {error, result, duration, passed, retries}) {
-        await ScreenShotUti.getScreenShotAsFailed(test,context, error);
+        await ScreenShotUtils.getScreenShotAsFailed(test,context, error);
     },
 
     //Allure report, support local run, if using BS, check report on BS instead

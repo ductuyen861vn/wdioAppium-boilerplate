@@ -1,14 +1,25 @@
 import HomeScreen from "../../../screenobjects/android/screens/HomeScreen.js";
+import {BaseTest} from "../../BaseTest.js";
 
-describe('Thread-Mobile[IOS]-Verify buttons on Home Screen', () => {
-    beforeEach(async () => {
-    });
+export class AndroidHomePage extends BaseTest {
+    constructor() {
+        super();
+    }
 
-    it('should be open SignIn screen when click on button SignIn', async () => {
-        await HomeScreen.clickOnButtonSignIn()
-    });
+    async testMethod() {
+        describe('Thread-Mobile[IOS]-Verify buttons on Home Screen', () => {
+            beforeEach(async () => {
+            });
 
-    it('should be open JoinStudy screen when click on button JoinStudy', async () => {
-        await HomeScreen.clickOnButtonJoinStudy()
-    });
-});
+            it('should be open SignIn screen when click on button SignIn', async () => {
+                await HomeScreen.clickOnButtonSignIn()
+            });
+
+            it('should be open JoinStudy screen when click on button JoinStudy', async () => {
+                await HomeScreen.clickOnButtonJoinStudy()
+            });
+        });
+    }
+}
+
+new AndroidHomePage().testMethod();
