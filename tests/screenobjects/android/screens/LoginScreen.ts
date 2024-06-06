@@ -1,14 +1,14 @@
 import AppScreen from "../../AppScreen.js";
-import Gestures from "../../../helpers/Gestures.js";
 import LoginPageObjects from "../objects/LoginScreenObjects.js";
 import logger from "@wdio/logger";
+
 const log = logger('LoginScreen');
 
 const SELECTORS = {
     SCREEN: '~Login-screen',
 };
 
-class LoginScreen extends AppScreen {
+export class LoginScreen extends AppScreen {
     constructor () {
         super(SELECTORS.SCREEN);
     }
@@ -23,5 +23,3 @@ class LoginScreen extends AppScreen {
     }
 
 }
-
-export default new LoginScreen();

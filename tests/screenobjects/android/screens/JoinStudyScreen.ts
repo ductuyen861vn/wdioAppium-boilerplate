@@ -1,5 +1,4 @@
 import AppScreen from "../../AppScreen.js";
-import Gestures from "../../../helpers/Gestures.js";
 import logger from "@wdio/logger";
 import JoinStudyScreenObjects from "../objects/JoinStudyScreenObjects.js";
 

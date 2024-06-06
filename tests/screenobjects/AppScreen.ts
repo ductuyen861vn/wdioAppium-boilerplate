@@ -20,7 +20,7 @@ export default class AppScreen {
         });
     }
 
-    async closeKeyboardIfExist(isShown = true): Promise<void> {
+    async closeIOSKeyboardIfExist(isShown = true): Promise<void> {
         log.info("Close keyboard button if exists", isShown);
         if (await driver.isKeyboardShown()){
             if (await SystemObjects.btnDoneKeyboard.isDisplayed()) await SystemObjects.btnDoneKeyboard.click()

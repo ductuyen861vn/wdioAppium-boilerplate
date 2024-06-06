@@ -1,5 +1,5 @@
-import { DEFAULT_PIN, INCORRECT_PIN } from './Constants.js';
-import { executeInHomeScreenContext } from './Utils.js';
+import { executeInHomeScreenContext } from './CommonUtils.js';
+import {Constants} from "./Constants.js";
 
 class Biometrics {
     private get iosAllowBiometry() {return $('~Don’t Allow');}
@@ -19,7 +19,7 @@ class Biometrics {
             return this.submitIosBiometricLogin(successful);
         }
 
-        return this.submitAndroidBiometricLogin(successful ? DEFAULT_PIN : INCORRECT_PIN);
+        return this.submitAndroidBiometricLogin(successful ? Constants.DEFAULT_PIN : Constants.INCORRECT_PIN);
     }
 
     /**

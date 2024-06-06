@@ -1,9 +1,9 @@
 import AppScreen from "../../AppScreen.js";
-import Gestures from "../../../helpers/Gestures.js";
 import logger from "@wdio/logger";
 import HomeScreenObjects from "../objects/HomeScreenObjects.js";
 import JoinStudyScreenObjects from "../objects/JoinStudyScreenObjects.js";
 import LoginScreenObjects from "../objects/LoginScreenObjects.js";
+
 const log = logger('HomeScreen');
 
 const SELECTORS = {

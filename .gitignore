@@ -21,6 +21,7 @@ chromeDriver
 #report
 allure-results/
 junit-results/
+history_backup/
 
 #screenshot
 resource/savescreenshot/

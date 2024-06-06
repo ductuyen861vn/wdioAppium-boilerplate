@@ -1,4 +1,4 @@
-import { BUNDLE_ID } from './Constants.js';
+import {Constants} from "./Constants.js";
 
 export const CONTEXT_REF = {
     NATIVE_APP: 'NATIVE_APP',
@@ -105,7 +105,7 @@ class WebView {
                 const currentContexts = await this.getCurrentContexts();
                 // The name of the webview can be different on Android and iOS, so we need to check for both
                 // We can get the app identifier for Android with the `driver.getCurrentPackage()` command, but there is no equivalent for iOS
-                const appIdentifier = driver.isIOS ? BUNDLE_ID : await driver.getCurrentPackage();
+                const appIdentifier = driver.isIOS ? Constants.BUNDLE_ID : await driver.getCurrentPackage();
 
                 return currentContexts.length > 1 &&
                     currentContexts.find(context => {
@@ -150,7 +150,7 @@ class WebView {
 
         // This is where the magic happens, we are going to find the correct context(pae) to switch to for iOS or Android.
         if (driver.isIOS) {
-            matchingContext = this.findMatchingContext({ contexts: currentContexts, identifier: BUNDLE_ID, title, url });
+            matchingContext = this.findMatchingContext({ contexts: currentContexts, identifier: Constants.BUNDLE_ID, title, url });
         } else {
             packageName = await driver.getCurrentPackage();
             // 1. To find the correct webview page for Android we need to switch to the webview first
@@ -162,7 +162,7 @@ class WebView {
 
         if (!matchingContext) {
             throw new Error(this.generateNonMatchingErrorMessage({
-                identifier: driver.isIOS ? BUNDLE_ID :
+                identifier: driver.isIOS ? Constants.BUNDLE_ID :
                 packageName as string,
                 title,
                 url,

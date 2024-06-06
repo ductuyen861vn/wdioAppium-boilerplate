@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "baseUrl": "./",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "sourceMap": false,
         "target": "ESNext",
         "module": "NodeNext",
@@ -19,7 +21,7 @@
             "expect-webdriverio",
             "@wdio/sauce-service",
             "@wdio/devtools-service"
-        ],
+        ]
     },
     "include": [
         "./config/**/*.ts",

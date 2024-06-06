@@ -1,4 +1,4 @@
-import { DEFAULT_PIN } from '../helpers/Constants.js';
+import {Constants} from "../helpers/Constants.js";
 
 class AndroidSettings {
     /**
@@ -126,7 +126,7 @@ class AndroidSettings {
     async enableBiometricLogin() {
         // Open the settings screen and set screen lock to pin
         await this.executeAdbCommand(
-            `am start -a android.settings.SECURITY_SETTINGS && locksettings set-pin ${DEFAULT_PIN}`,
+            `am start -a android.settings.SECURITY_SETTINGS && locksettings set-pin ${Constants.DEFAULT_PIN}`,
         );
         // As of Android 14 there is a new flow to enable finger print
         if (this.platformVersion >= 14) {
@@ -140,7 +140,7 @@ class AndroidSettings {
         } else {
             await this.waitAndTap('.*Fingerprint.*');
         }
-        await this.fingerPrintWizard(DEFAULT_PIN);
+        await this.fingerPrintWizard(Constants.DEFAULT_PIN);
 
     }
 }

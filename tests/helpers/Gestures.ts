@@ -35,7 +35,7 @@ export const DIRECTIONS = {
 } as const;
 type SwipeDirectionType = typeof DIRECTIONS[keyof typeof DIRECTIONS];
 
-class Gestures {
+export class Gestures {
     /**
      * Check if an element is visible and if not wipe up a portion of the screen to
      * check if it visible after x amount of scrolls
@@ -211,5 +211,3 @@ class Gestures {
         await driver.pause(1000);
     }
 }
-
-export default Gestures;

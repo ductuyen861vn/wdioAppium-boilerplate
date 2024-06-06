@@ -1,0 +1,20 @@
+{
+  "configuration":{
+    "timeZone": "EST"
+  },
+
+  "environment": {
+    "env": "QA",
+    "study1": {
+      "webAppUrl": "https://study1.thread.com.vn",
+      "participantUserName": "participant1",
+      "participantBasicAuth": "Basic Auth"
+    },
+    "study2": {
+      "webAppUrl": "https://study2.thread.com.vn",
+      "participantUserName": "participant1",
+      "participantBasicAuth": "Basic Auth"
+    }
+  }
+}
+

@@ -1,5 +1,5 @@
 import AppScreen from './AppScreen.js';
-import Gestures from '../helpers/Gestures.js';
+import {Gestures} from '../helpers/Gestures.js';
 
 const SELECTORS = {
     SCREEN: '~Login-screen',

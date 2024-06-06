@@ -1,9 +1,6 @@
-import LoginScreen from "../../../screenobjects/android/screens/LoginScreen.js";
 import HomeScreen from "../../../screenobjects/android/screens/HomeScreen.js";
-import JoinStudyScreen from "../../../screenobjects/android/screens/JoinStudyScreen.js";
 
-
-describe('Verify buttons on Home Screen', () => {
+describe('Thread-Mobile[IOS]-Verify buttons on Home Screen', () => {
     beforeEach(async () => {
     });
 

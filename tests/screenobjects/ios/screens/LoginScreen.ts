@@ -19,9 +19,9 @@ class LoginScreen extends AppScreen {
     async submitLogin(username:string, password:string){
         log.info("Submit login with username:" + username + " and password:" + password);
         await LoginScreenObjects.txtUsername.setValue(username)
-        await this.closeKeyboardIfExist()
+        await this.closeIOSKeyboardIfExist()
         await LoginScreenObjects.txtPassword.setValue(password)
-        await this.closeKeyboardIfExist()
+        await this.closeIOSKeyboardIfExist()
         await LoginScreenObjects.btnLogin.click()
     }
 }

@@ -1,0 +1,12 @@
+{
+  "TC_0001": {
+    "participant1": {
+      "username": "participant1@gmail.com",
+      "password": "PW2@123456789"
+    },
+    "participant2": {
+      "username": "participant2@gmail.com",
+      "password": "PW2@123456789"
+    }
+  }
+}

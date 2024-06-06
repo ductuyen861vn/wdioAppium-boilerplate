@@ -1,13 +1,12 @@
-// @ts-ignore
 import type {Options} from '@wdio/types';
 import * as process from "node:process";
-import ScreenShotUti from "../tests/utilities/ScreenShotUti.js";
-import allure from "allure-commandline";
+import ScreenShotUti from "../tests/helpers/ScreenShotUtils.js";
+// @ts-ignore
 import fs from "fs-extra";
 import path from "path";
 
-const retries = process.env.RETRIES || process.env.DEFAULT_RETRIES;
-const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE || process.env.DEFAULT_SECOND_IMPLICIT_WAIT_MOBILE;
+const retries = process.env.RETRIES;
+const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE;
 const debug = process.env.DEBUG
 
 /**
@@ -46,7 +45,7 @@ export const config: Options.Testrunner = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'debug',
+    logLevel: 'info',
     // Set specific log levels per logger
     // loggers:
     // - webdriver, webdriverio
@@ -155,11 +154,12 @@ export const config: Options.Testrunner = {
     after: async () => {
     },
 
-    //Take screenshot if failed
+    //Take screenshot if failed, support local run, if using BS, check screenshot / record file on BS instead
     afterTest: async function (test, context, {error, result, duration, passed, retries}) {
         await ScreenShotUti.getScreenShotAsFailed(test,context, error);
     },
 
+    //Allure report, support local run, if using BS, check report on BS instead
     onComplete: function (exitCode, config, capabilities, results) {
         const resultsDir = path.join(process.cwd(), 'allure-results');
         const historyDir = path.join(resultsDir, 'history');
@@ -184,4 +184,6 @@ export const config: Options.Testrunner = {
             fs.copySync(historyDir, path.join(process.cwd(), 'history_backup'));
         }
     },
+
+    maxInstances: 1
 };
