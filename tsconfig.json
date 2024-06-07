@@ -13,6 +13,21 @@
         "strictNullChecks": true,
         "noEmit": true,
         "allowImportingTsExtensions": true,
+        "paths": {
+            "@config/*": ["config/*"],
+            "@tests/*": ["tests/*"],
+            "@helpers/*": ["tests/helpers/*"],
+            "@specs/*": ["tests/specs/*"],
+            "@pageObjects/*": ["tests/pageobjects/*"],
+            "@screenObjects/*": ["tests/screenobjects/*"],
+            "@api/*": ["tests/api/*"],
+            "@iosScreens/*": ["tests/screenobjects/ios/screens/*"],
+            "@androidScreens/*": ["tests/screenobjects/android/screens/*"],
+            "@iosObjects/*": ["tests/screenobjects/ios/objects/*"],
+            "@androidObjects/*": ["tests/screenobjects/android/objects/*"],
+            "@webObjects/*": ["tests/pageobjects/objects/*"],
+            "@webPages/*": ["tests/pageobjects/pages/*"]
+        },
         "types": [
             "node",
             "@wdio/types",

@@ -1,5 +1,5 @@
-import HomeScreen from "../../../screenobjects/android/screens/HomeScreen.js";
-import {BaseTest} from "../../BaseTest.js";
+import HomeScreen from "@androidScreens/HomeScreen.js";
+import {BaseTest} from "@specs/BaseTest.js";
 
 export class AndroidHomePage extends BaseTest {
     constructor() {

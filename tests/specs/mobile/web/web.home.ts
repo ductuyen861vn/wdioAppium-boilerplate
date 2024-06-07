@@ -1,8 +1,8 @@
-import HomePage from "../../pageobjects/pages/HomePage.ts";
-import HomePageObjects from "../../pageobjects/objects/HomePageObjects.js";
-import {BaseTest} from "../BaseTest.js";
+import HomePage from "@webPages/HomePage.ts";
+import HomePageObjects from "@webObjects/HomePageObjects.js";
+import {BaseTest} from "@specs/BaseTest.js";
 
-class WebHome extends BaseTest {
+export class WebHome extends BaseTest {
     constructor() {
         super();
     }
@@ -19,7 +19,6 @@ class WebHome extends BaseTest {
 
             it('should be open web successfully - Test 1', async () => {
                 console.log("waiting for 5 seconds")
-                const a = await this.testData.TC_0001.participant1.username
                 await HomePage.openHomePage()
                 await HomePage.enterValueToSearchBox("WebdriverIO-FailCase-Step1")
                 await HomePageObjects.txtSearch.clearValue()

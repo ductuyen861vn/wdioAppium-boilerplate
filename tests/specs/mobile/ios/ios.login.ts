@@ -1,8 +1,7 @@
-import HomeScreen from "../../../screenobjects/ios/screens/HomeScreen.js";
-import LoginScreen from "../../../screenobjects/ios/screens/LoginScreen.js";
-import {JsonUtils} from "../../../helpers/JsonUtils.js";
-import {BaseTest} from "../../BaseTest.js";
-import {languageSettings} from "../../../helpers/LanguageSettings.js";
+import HomeScreen from "@iosScreens/HomeScreen.js";
+import LoginScreen from "@iosScreens/LoginScreen.js";
+import {JsonUtils} from "@helpers/JsonUtils.js";
+import {BaseTest} from "@specs/BaseTest.js";
 
 const testData = await JSON.parse(await JsonUtils.readTestDataFile());
 

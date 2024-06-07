@@ -1,8 +1,8 @@
 import {config as baseConfig} from './wdio.shared.conf.js';
 import logger from '@wdio/logger'
-import {ScreenShotUtils} from "../tests/helpers/ScreenShotUtils.js";
+import {ScreenShotUtils} from "@helpers/ScreenShotUtils.js";
 import process from "node:process";
-import {Constants} from "../tests/helpers/Constants.js";
+import {Constants} from "@helpers/Constants.js";
 
 const log = logger('wdio.mobile-shared.conf');
 

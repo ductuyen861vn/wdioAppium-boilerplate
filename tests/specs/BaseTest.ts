@@ -1,6 +1,7 @@
-import { JsonUtils } from "../helpers/JsonUtils.js";
+import { JsonUtils } from "@helpers/JsonUtils.js";
 import logger from "@wdio/logger";
 const log = logger('wdio.mobile-shared.conf');
+import allureReporter from '@wdio/allure-reporter'
 
 export class BaseTest {
     // Common property
@@ -25,6 +26,13 @@ export class BaseTest {
         log.info("Loading Environment file to BaseTest")
         this.environment = await JSON.parse(await JsonUtils.readEnvironmentFile())
         return this
+    }
+
+    async logStep(stepDescription :string) {
+        // Log step to Allure report
+        allureReporter.addStep(stepDescription);
+        // Log step to BrowserStack report
+        await driver.execute('browserstack_executor: {"action": "annotate", "arguments": {"data": "' + stepDescription + '", "level": "info"}}');
     }
 
     // Common teardown for all tests

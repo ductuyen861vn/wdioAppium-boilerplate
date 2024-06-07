@@ -7,7 +7,7 @@ export class Constants {
     static readonly DEFAULT_TEST_LOCALIZATION_PATH = 'resource/loc'
     static readonly APP_MOBILE_ANDROID_DEFAULT_SPECS="../../tests/specs/mobile/android/**/*.ts"
     static readonly APP_MOBILE_IOS_DEFAULT_SPECS = '../../tests/specs/mobile/ios/**/*.ts'
-    static readonly WEB_DEFAULT_SPECS = "../../tests/specs/web/**/*.ts"
+    static readonly WEB_DEFAULT_SPECS = "../../tests/specs/mobile/web/**/*.ts"
     static readonly BS_DEFAULT_IOS_DEFAULT_APP = "bs://e14f211fb60fcab39bcbe21e8c2e08956aded5d9"
     static readonly BS_DEFAULT_ANDROID_DEFAULT_APP = "bs://ae672b0aa206a83a4b5186cefff0483c006cd37b"
     static readonly DEFAULT_APP_ACTIVITY = "com.thread.TURBO.ui.SplashActivity"
