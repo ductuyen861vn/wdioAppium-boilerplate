@@ -16,6 +16,9 @@ class HomeScreen extends BaseScreen {
     private homeScreenObjects: typeof HomeScreenObjects;
     // @ts-ignore
     private loginScreenObjects: typeof LoginScreenObjects;
+    // @ts-ignore
+    private joinStudyScreenObjects: typeof JoinStudyScreenObjects;
+
     constructor () {
         super(SELECTORS.SCREEN);
     }
@@ -25,6 +28,7 @@ class HomeScreen extends BaseScreen {
         try {
             this.homeScreenObjects = (await import(`../objects/${language}/HomeScreenObjects.js`)).default;
             this.loginScreenObjects = (await import(`../objects/${language}/LoginScreenObjects.js`)).default;
+            this.joinStudyScreenObjects = (await import(`../objects/${language}/JoinStudyScreenObjects.js`)).default;
         } catch (error) {
             throw new Error(`Failed to load element container for language: ${language}`);
         }
@@ -35,7 +39,7 @@ class HomeScreen extends BaseScreen {
     async clickOnButtonJoinStudy(){
         log.info("Click on button Join Study");
        await this.homeScreenObjects.btnJoinStudy.click()
-        await expect(JoinStudyScreenObjects.lblQuestion).toBeDisplayed()
+        await expect(this.joinStudyScreenObjects.lblQuestion).toBeDisplayed()
     }
 
     async clickOnButtonSignIn(){

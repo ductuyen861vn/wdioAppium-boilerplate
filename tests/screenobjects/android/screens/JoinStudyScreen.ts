@@ -31,12 +31,12 @@ class JoinStudyScreen extends BaseScreen {
 
     async clickOnButtonYes() {
         log.info("Click on button Yes");
-        await JoinStudyScreenObjects.btnYes.click()
+        await this.joinStudyScreenObjects.btnYes.click()
     }
 
     async clickOnButtonNo() {
         log.info("Click on button No");
-        await JoinStudyScreenObjects.btnNo.click()
+        await this.joinStudyScreenObjects.btnNo.click()
     }
 
 }
