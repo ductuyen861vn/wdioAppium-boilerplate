@@ -1,7 +1,7 @@
-import {config as baseConfig} from '../wdio.app.mobile.shared.conf.js';
+import {config as baseConfig} from '../wdio.app.mobile.shared.conf.ts';
 import {fileURLToPath} from "url";
 import path from "path";
-import {getAppByConfigFileName, getSpecsByConfigFileName} from "@helpers/CommonUtils.js";
+import {getAppByConfigFileName, getSpecsByConfigFileName} from "../../tests/helpers/CommonUtils.ts";
 const configFilePath = fileURLToPath(import.meta.url);
 const configFileName = path.basename(configFilePath);
 const specs = await getSpecsByConfigFileName(configFileName);

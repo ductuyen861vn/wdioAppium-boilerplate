@@ -1,6 +1,6 @@
-import HomePage from "../../../pageobjects/pages/HomePage.js";
-import HomePageObjects from "../../../pageobjects/objects/en/HomePageObjects.js";
-import {BaseTest} from "../../BaseTest.js";
+import HomePage from "../../pageobjects/pages/HomePage.js";
+import HomePageObjects from "../../pageobjects/objects/en/HomePageObjects.js";
+import {BaseTest} from "../BaseTest.js";
 
 export class WebHome extends BaseTest {
     constructor() {

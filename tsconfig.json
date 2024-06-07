@@ -1,45 +1,46 @@
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "sourceMap": false,
-        "target": "ESNext",
-        "module": "NodeNext",
-        "moduleResolution": "Node16",
-        "removeComments": true,
-        "noImplicitAny": true,
-        "strictPropertyInitialization": true,
-        "strictNullChecks": true,
-        "noEmit": true,
-        "allowImportingTsExtensions": true,
-        "paths": {
-            "@config/*": ["config/*"],
-            "@tests/*": ["tests/*"],
-            "@helpers/*": ["tests/helpers/*"],
-            "@specs/*": ["tests/specs/*"],
-            "@pageObjects/*": ["tests/pageobjects/*"],
-            "@screenObjects/*": ["tests/screenobjects/*"],
-            "@api/*": ["tests/api/*"],
-            "@iosScreens/*": ["tests/screenobjects/ios/screens/*"],
-            "@androidScreens/*": ["tests/screenobjects/android/screens/*"],
-            "@iosObjects/*": ["tests/screenobjects/ios/objects/*"],
-            "@androidObjects/*": ["tests/screenobjects/android/objects/*"],
-            "@webObjects/*": ["tests/pageobjects/objects/*"],
-            "@webPages/*": ["tests/pageobjects/pages/*"]
-        },
-        "types": [
-            "node",
-            "@wdio/types",
-            "@wdio/globals/types",
-            "@wdio/mocha-framework",
-            "expect-webdriverio",
-            "@wdio/sauce-service",
-            "@wdio/devtools-service"
-        ]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      //https://github.com/webdriverio/webdriverio/issues/10191 Not support path alias since v8
+      //"@config/*": ["config/*"],
+      //"@tests/*": ["tests/*"],
+      //"@helpers/*": ["tests/helpers/*"],
+      //"@specs/*": ["tests/specs/*"],
+      //"@pageObjects/*": ["tests/pageobjects/*"],
+      //"@screenObjects/*": ["tests/screenobjects/*"],
+      //"@api/*": ["tests/api/*"],
+      //"@iosScreens/*": ["tests/screenobjects/ios/screens/*"],
+      //"@androidScreens/*": ["tests/screenobjects/android/screens/*"],
+      //"@iosObjects/*": ["tests/screenobjects/ios/objects/*"],
+      //"@androidObjects/*": ["tests/screenobjects/android/objects/*"],
+      //"@webObjects/*": ["tests/pageobjects/objects/*"],
+      //"@webPages/*": ["tests/pageobjects/pages/*"]
     },
-    "include": [
-        "./config/**/*.ts",
-        "./tests/**/*.ts"
-    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": [
+      "node",
+      "@wdio/types",
+      "@wdio/globals/types",
+      "@wdio/mocha-framework",
+      "expect-webdriverio",
+      "@wdio/sauce-service",
+      "@wdio/devtools-service"
+    ]
+  },
+  "include": [
+    "./config/**/*.ts",
+    "./tests/**/*.ts"
+  ]
 }

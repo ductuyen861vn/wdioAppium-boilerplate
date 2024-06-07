@@ -1,6 +1,7 @@
 import BaseScreen from "../../BaseScreen.js";
 import logger from "@wdio/logger";
-import JoinStudyScreenObjects from "../objects/JoinStudyScreenObjects.js";
+import JoinStudyScreenObjects from "../objects/en/JoinStudyScreenObjects.js";
+import {languageSettings} from "../../../helpers/LanguageSettings.js";
 
 const log = logger('JoinStudyScreen');
 
@@ -9,8 +10,19 @@ const SELECTORS = {
 };
 
 class JoinStudyScreen extends BaseScreen {
+    // @ts-ignore
+    private joinStudyScreenObjects: typeof JoinStudyScreenObjects;
     constructor() {
         super(SELECTORS.SCREEN);
+    }
+
+    async initialize() {
+        const language = languageSettings.getLanguage();
+        try {
+            this.joinStudyScreenObjects = (await import(`../objects/${language}/JoinStudyScreenObjects.js`)).default;
+        } catch (error) {
+            throw new Error(`Failed to load element container for language: ${language}`);
+        }
     }
 
     get screen() {

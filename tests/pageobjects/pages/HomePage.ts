@@ -1,5 +1,5 @@
 import BasePage from '../BasePage.js';
-import HomePageObjects from '../objects/HomePageObjects.js';
+import HomePageObjects from "../objects/en/HomePageObjects.js";
 import {browser} from "@wdio/globals";
 
 class HomePage extends BasePage {

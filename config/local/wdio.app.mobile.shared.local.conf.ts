@@ -1,4 +1,4 @@
-import {config as baseConfig} from '../wdio.app.mobile.shared.conf.js';
+import {config as baseConfig} from '../wdio.app.mobile.shared.conf.ts';
 import logger from '@wdio/logger'
 const log = logger('wdio.mobile-shared.conf');
 

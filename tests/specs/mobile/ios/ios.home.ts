@@ -1,5 +1,5 @@
-import HomeScreen from "@iosScreens/HomeScreen.js";
-import {BaseTest} from "@specs/BaseTest.js";
+import HomeScreen from "../../../screenobjects/ios/screens/HomeScreen.js";
+import {BaseTest} from "../../BaseTest.js";
 
 export class IOSHomePage extends BaseTest {
     constructor() {

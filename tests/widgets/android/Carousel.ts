@@ -1,4 +1,4 @@
-import {Gestures} from '../../helpers/Gestures.js';
+import {Gestures} from "../../helpers/Gestures.js";
 import type { RectReturn } from '@wdio/protocols';
 
 let CAROUSEL_RECTANGLES: RectReturn;

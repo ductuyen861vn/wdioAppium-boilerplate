@@ -1,5 +1,6 @@
-import { JsonUtils } from "@helpers/JsonUtils.js";
+import {JsonUtils} from "../helpers/JsonUtils.js";
 import logger from "@wdio/logger";
+
 const log = logger('wdio.mobile-shared.conf');
 import allureReporter from '@wdio/allure-reporter'
 
@@ -7,7 +8,7 @@ export class BaseTest {
     // Common property
     public testData: any;
     public environment: any;
-    public loc: any ;
+    public loc: any;
     public logger: any;
 
     constructor() {
@@ -28,7 +29,7 @@ export class BaseTest {
         return this
     }
 
-    async logStep(stepDescription :string) {
+    async logStep(stepDescription: string) {
         // Log step to Allure report
         allureReporter.addStep(stepDescription);
         // Log step to BrowserStack report

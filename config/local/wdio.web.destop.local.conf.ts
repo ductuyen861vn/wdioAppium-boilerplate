@@ -1,8 +1,8 @@
-import {config as baseConfig} from '../wdio.web.shared.conf.js';
+import {config as baseConfig} from '../wdio.web.shared.conf.ts';
 import process from "node:process";
 import {fileURLToPath} from "url";
 import path from "path";
-import {getSpecsByConfigFileName} from "@helpers/CommonUtils.js";
+import {getSpecsByConfigFileName} from "../../tests/helpers//CommonUtils.ts";
 
 const webBrowser = process.env.BROWSER;
 const retries = process.env.RETRIES;
