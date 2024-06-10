@@ -1,6 +1,13 @@
 import HomePage from "../../../pageobjects/pages/HomePage.js";
 import HomePageObjects from "../../../pageobjects/objects/en/HomePageObjects.js";
 import {BaseTest} from "../../BaseTest.js";
+import {languageSettings} from "../../../helpers/LanguageSettings.js";
+import HomeScreen from "../../../screenobjects/ios/screens/HomeScreen.js";
+import LoginScreen from "../../../screenobjects/ios/screens/LoginScreen.js";
+import {TestDataUtils} from "../../../helpers/TestDataUtils.js";
+import {TestLocalizationUtils} from "../../../helpers/TestLocalizationUtils.js";
+import {TestEnvironmentUtils} from "../../../helpers/TestEnvironmentUtils.js";
+const testData = await JSON.parse(await TestDataUtils.readTestDataFile());
 
 export class WebHome extends BaseTest {
     constructor() {
@@ -19,10 +26,14 @@ export class WebHome extends BaseTest {
 
             it('should be open web successfully - Test 1', async () => {
                 console.log("waiting for 5 seconds")
+                await languageSettings.setLanguage("fr")
+                await this.setup()
                 await HomePage.openHomePage()
                 await HomePage.enterValueToSearchBox("WebdriverIO-FailCase-Step1")
                 await HomePageObjects.txtSearch.clearValue()
                 await HomePageObjects.txtSearch.setValue("WebdriverIO-FailCase-Step2")
+                const errorMessage = `[label="${this.loc.TC_0001.loginScreen.txtForgotPassword}."]`
+                await expect($(errorMessage)).toBeDisplayed({ wait: 10 * 1000 })
                 await expect($("//ToBeFailed")).toBeDisplayed({wait:5*1000, message:"Force fail to test"})
             });
 
@@ -33,6 +44,8 @@ export class WebHome extends BaseTest {
                 await HomePageObjects.txtSearch.clearValue()
                 await HomePageObjects.txtSearch.setValue("WebdriverIO-PassCase-Step2")
             });
+
+
         });
     }
 }

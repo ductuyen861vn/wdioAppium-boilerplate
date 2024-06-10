@@ -1,6 +1,9 @@
 import {browser} from "@wdio/globals";
-import {JsonUtils} from "../helpers/JsonUtils.js";
 import logger from "@wdio/logger";
+import {TestDataUtils} from "../helpers/TestDataUtils.js";
+import {TestLocalizationUtils} from "../helpers/TestLocalizationUtils.js";
+import {TestEnvironmentUtils} from "../helpers/TestEnvironmentUtils.js";
+
 const log = logger('BaseScreen');
 
 export default class BasePage {
@@ -15,13 +18,13 @@ export default class BasePage {
     async setup() {
         log.info("Setup")
         log.info("Loading test data file to AppScreen")
-        this.testData = await JSON.parse(await JsonUtils.readTestDataFile());
+        this.testData = await JSON.parse(await TestDataUtils.readTestDataFile());
 
         log.info("Loading loc file to AppScreen")
-        this.loc = await JSON.parse(await JsonUtils.readLOCFile())
+        this.loc = await TestLocalizationUtils.parseLOCFileWithLanguageSetting();
 
         log.info("Loading Environment file to AppScreen")
-        this.environment = await JSON.parse(await JsonUtils.readEnvironmentFile())
+        this.environment = await JSON.parse(await TestEnvironmentUtils.readEnvironmentFile())
         return this
     }
 

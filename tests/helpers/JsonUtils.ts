@@ -6,6 +6,7 @@ import {Constants} from "./Constants.js";
 export class JsonUtils {
 
     static async readJsonFile(filePath : string): Promise<string> {
+        console.log('Reading file :' + filePath)
         try {
             // Read and parse the JSON file
             const data = await new Promise((resolve, reject) => {

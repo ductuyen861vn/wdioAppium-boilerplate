@@ -2,349 +2,375 @@
 
 **NOTE:** This project is for Webdriver V8 where the tests are written with `async`/`await` and TypeScript.
 
-Boilerplate project to run Appium tests together with WebdriverIO for:
+Project to run Appium tests together with WebdriverIO for:
 
-- iOS/Android Native Apps
-- iOS/Android Hybrid Apps
+- iOS/Android Native Apps ([check here](./README.md#native-app-tests))
 - Android Chrome and iOS Safari browser ([check here](./README.md#automating-chrome-or-safari))
 
 > [!IMPORTANT]
-> This boilerplate uses the WebdriverIO native app which can be found in folder root/app/
+> This Project uses the WebdriverIO native app which can be found in folder root/app/
 
 ## Based on
 
 This project is currently based on:
 
 - **WebdriverIO:** `8.x`
-- **Appium Local:** `2.x`, also pair well with Appium Browser Stack 1.22
+- **Appium Local:** `2.4.1`, also pair well with Appium Browser Stack 2.4.1
 
 ## Installation
 
-1. Clone this project by running
+You have to go through all setups to the end if working on test script, stop after **'Install NodeJ and NPM'** if you're
+executor
+
+### Setup for Execution
+
+> [!NOTE]
+> You don't need Appium installed on you local machine when running test in a cloud (BrowserStack), You HAVE to install
+> Appium on you local machine when running test locally
+
+1. Install NodeJ and NPM
+2. Clone this project by running
 
 ```sh
 git clone TBD
 ```
 
-2. Install all dependencies
+3. Install all dependencies
 
 ```sh
 npm install
 ```
 
-> [!TIP]
-> Use the [appium-installer](https://github.com/AppiumTestDistribution/appium-installer) package to setup Appium on your local machine. This will also help you configure Android Emulators/ iOS Simulators.
+### Setup for Implementation
 
-> [!NOTE]
-> You don't need Appium installed on you local machine When running test in a cloud (BrowserStack or Kobiton)
+4. Install Appium and every dependency locally
+5. Install Appium Doctor to check your appium server really or not
+6. Install driver Uiautomator2 & XCUITest
+7. Install Android Studio
+8. Install Xcode
+9. Config setup to run on IOS real device, see
+   at https://appium.github.io/appium-xcuitest-driver/latest/preparation/real-device-config/
+10. Install Appium Inspector
 
-3. Create a `./apps` directory at the root of this project. Download the app files (`.zip` / `.apk`) with version >= `1.0.0`, which can be found [here](https://github.com/webdriverio/native-demo-app/releases), into the `./apps` folder.
+Choose one of the following options to run & debug test script
 
-4. Adjust the configuration file(s) for [Android](./config/wdio.android.app.conf.ts) and [iOS](./config/wdio.ios.app.conf.ts) regarding the device configuration you've created on your local machine.
+* WebStorm
 
-5. Running tests locally
-    - **Android App:** `npm run android.app`
-    - **Android Browser:**  `npm run android.browser`
-    - **iOS App:** `npm run ios.app`
-    - **iOS Browser:**  `npm run ios.browser`
+```
+Config: NodeJS
+Node parameters: -r ts-node/register
+Javascript file: node_modules/@wdio/cli/bin/wdio.js
+Application parameters: <config files> ex: config/local/wdio.web.destop.local.conf.ts
+Environment variables: <See section Environment Variables>
+```
 
-## How to implement in your project
+* VSCode
 
-Choose one of the following options:
+```
+TBD
+```
 
-1. Clone the git repo — `git clone https://github.com/webdriverio/appium-boilerplate.git`
-1. Copy the files to your project directory (all files in `/tests` and the `wdio.conf` files in the `config` folder)
-1. Merge project dev dependencies with your project dev dependencies in your `package.json`
-1. Merge the scripts to your `package.json` scripts
-1. Run the tests, see [Native App Tests](#native-app-tests) or [Automating Chrome of Safari](#automating-chrome-or-safari).
+## Project Structure (Design pattern = Page Object Model (POM))
+
+* [Configs](./config) : Set devices, browser, map test suite, setup capability, setup hooks , setup services (Appium,
+  BS, Allure Reportetc)etc
+* [Specs](./tests/specs) : Test case package
+* [Resource](./resource) : Test environment, test data, test localization file,screenshot
+* [PageObjects](./tests/pageobjects) : POM - Web
+* [ScreenObjects](./tests/screenobjects) : POM - Mobile
+* [Widgets](./tests/widgets) : Custom mobile widgets/ web components/ controllers
+* [API](./tests/api) : App participant API , admin portal API
+* [Helpers](./tests/helpers) : Utilities
+* [App](./apps) : App package (apk, ipa)
 
 ## Configuration files
 
-This boilerplate uses a specific config for iOS and Android, see [configs](./config). The configs are based on a shared config
+This project uses a specific config for iOS and Android, see [configs](./config). The configs are based on a shared
+config
 [`wdio.shared.conf.ts`](./config/wdio.shared.conf.ts).
-This shared config holds **all the defaults** so the iOS and Android configs only need to hold the capabilities and specs that are needed for running on iOS and or Android (app or browser).
+This shared config holds **all the defaults** so the iOS and Android configs only need to hold the capabilities and
+specs that are needed for running on iOS and or Android (app or browser).
 
-Please check the [`wdio.shared.conf.ts`](./config/wdio.shared.conf.ts)-file for the minimal configuration options. Notes are added for why a different value has been selected in comparison to the default values WebdriverIO provides.
+Please check the [`wdio.shared.conf.ts`](./config/wdio.shared.conf.ts)-file for the minimal configuration options. Notes
+are added for why a different value has been selected in comparison to the default values WebdriverIO provides.
 
-Since we do not have Appium installed as part of this package we are going to use the globally installed version of Appium. This is configured in [`wdio.app.mobile.shared.conf.ts`](./config/wdio.app.mobile.shared.conf.ts).
+Currently, the configs support to run Local Devices and BrowserStack devices, they are groups under package 'local' and
+browserstack. While BS, you don't need setup anything beside BS account, for Local, you have to setup a lot of things to
+make it run
 
-## Locator strategy for native apps
+## Multi environment, test data and API keywords
 
-The locator strategy for this boilerplate is to use `accessibilityID`s, see also the
-[WebdriverIO docs](https://webdriver.io/docs/selectors#accessibility-id) or this newsletter on [AppiumPro](https://appiumpro.com/editions/20).
-`accessibilityID`s makes it easy to script once and run on iOS and Android because most of the apps already have some `accessibilityID`s.
+Based on the last agreement of design concept, the automation will be implemented and executed on 'Auto' environment,
+where we set everything fit to run automation,
+with this enhancement, for future, if we have any changes, we can move further outside of scope to support running on
+multiple environment beside 'Automation'. To achievement this target we need:
 
-If `accessibilityID`'s can't be used, and for example only XPATH is available, then the following setup could be used to make cross-platform selectors
+* Cross environment config files
+* Strongly support of API keywords
+* Cross environment test data files
 
-```js
-const SELECTORS = {
-    WEB_VIEW_SCREEN: browser.isAndroid
-        ? '*//android.webkit.WebView'
-        : '*//XCUIElementTypeWebView',
-};
+By default, the environment will be 'Automation'. According to the value of TEST_ENVIRONMENT, 'Automation.json', '
+QA.json', 'Staging.json' will be loaded corresponding
+
+Environment & Testdata data will be loaded one and only one at base pages like
+
+* BaseTest (test cases extend BaseTest)
+* BaseScreen (mobile screens extend BaseScreen)
+* BasePage (web pages extend BasePage)
+
+### How to set:
+
+Use environment variable **'process.env.TEST_ENVIRONMENT'**
+
+On ['.env' file](./.env): this file basically load every default value to environment variables, you can find it at root
+folder of project,
+you can change value of TEST_ENVIRONMENT on file
+
+Or
+
+If you run test by CLI, you can change TEST_ENVIRONMENT directly on CLI as well, sample:
+
+`TEST_ENVIRONMENT=QA npm run ...`
+
+### Environment config file
+
+* [Location](./resource/environment)
+
+### TestData
+
+* [Location](./resource/testdata)
+
+Please follows concept below to manage test data
+
+* Use API to generate dynamic test data, data will be generated in precondition step before moving to main test, the API
+  will be managed at [API package](./tests/api/)
+
+* Use TestData file to manage Read-Only test data, [file](./resource/testdata)
+
+### API
+
+TBD
+
+## PageObjects and ScreenObjects
+
+* ScreenObjects: package POM for Mobile
+* PageObjects : package POM for Web
+
+### ScreenObjects
+
+Every mobile screen will extend from [BaseScreen](./tests/screenobjects/BaseScreen.ts).
+This super class will share every config to any subclass like loading test data file, test localization file,
+environment file etc... in setup()
+It also shares setup on hooks and common keyword that we don't need to define again on every test class
+
+### PageObjects
+
+Share the same concept with ScreenObjects, every web page will extend from [BasePage](./tests/pageobjects/BasePage.ts)
+
+## Multilingual
+
+We support multilingual testing but only to a certain extent; we do not provide full support because multilingual
+testing is not the main focus of the work, investing too much effort for relatively small results would not be
+justified.
+
+To achieve your have to define localization text on [localization file](./resource/loc)
+And localize your page object with the language you have to run , for example Android:
+
+* [EN](./tests/screenobjects/android/objects/en)
+* [FR](./tests/screenobjects/android/objects/fr)
+
+By the concept, EN is always super class while the other languages are sup class which extended from EN, if you need
+localize your element on sup class, override it, if not leave it to use super class
+
+Localization file + localized objects will be efficiently when working on IOS where element is not always got by static
+ID but dynamic name, value
+
+### How to define localized pages
+
+Use reflection to import pageObjects
+
+See example at android [Homepage](./tests/screenobjects/android/screens/HomeScreen.ts)
+
+```
+class HomeScreen extends BaseScreen {
+private homeScreenObjects: typeof HomeScreenObjects;
+private loginScreenObjects: typeof LoginScreenObjects;
+private joinStudyScreenObjects: typeof JoinStudyScreenObjects;
+
+    constructor () {
+        super(SELECTORS.SCREEN);
+    }
+
+    async initialize() {
+        const language = languageSettings.getLanguage();
+        try {
+            this.homeScreenObjects = (await import(`../objects/${language}/HomeScreenObjects.js`)).default;
+            this.loginScreenObjects = (await import(`../objects/${language}/LoginScreenObjects.js`)).default;
+            this.joinStudyScreenObjects = (await import(`../objects/${language}/JoinStudyScreenObjects.js`)).default;
+        } catch (error) {
+            throw new Error(`Failed to load element container for language: ${language}`);
+        }
+    }
+
+    get screen () {return $(SELECTORS.SCREEN);}
+
+    async clickOnButtonJoinStudy(){
+        log.info("Click on button Join Study");
+       await this.homeScreenObjects.btnJoinStudy.click()
+        await expect(this.joinStudyScreenObjects.lblQuestion).toBeDisplayed()
+    }
+
+    async clickOnButtonSignIn(){
+        log.info("Click on button SignIn");
+        await this.homeScreenObjects.btnSignIn.click()
+        await expect(this.loginScreenObjects.txtPassword).toBeDisplayed()
+    }
+
+}
+
+export default new HomeScreen();
 ```
 
+### Test localization file
+
+Define localized text at [localization file](./resource/loc) for text which your want to check on application
+
+Last but not least, define supported language at [LanguageSettings](./tests/helpers/LanguageSettings.ts)
+
+### How to apply
+
+If only 1 language is used throughout of test run
+
+* Set via env variable **process.env.LANGUAGE** or ['.env' file](./.env)
+
+If using multiple languages in non-DataDriven test case
+
+* Use languageSettings.setLanguage(), Page.initialize() and recall **BaseTest.setup()**
+
+```
+it('should return error message if login by invalid user ' + run.userName, async () => {
+      await languageSettings.setLanguage("fr")
+      await HomeScreen.initialize()
+      await this.setup()
+      
+      await HomeScreen.clickOnButtonSignIn()
+      await LoginScreen.submitLogin(run.participant.username, run.participant.password)
+      await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })
+});
+```
+
+If using multiple languages in DataDriven test case
+
+* Use languageSettings.setLanguage(), Page.initialize() and recall **every keyword used inside BaseTest.setup()**
+
+```
+const runs = [
+    {userName: testData.TC_0001.participant1.username, participant:testData.TC_0001.participant1},
+    {userName: testData.TC_0001.participant2.username, participant:testData.TC_0001.participant2},
+];
+
+runs.forEach(function (run) {
+    it('should return error message if login by invalid user ' + run.userName, async () => {
+        await languageSettings.setLanguage("fr")
+        await HomeScreen.initialize()
+        const testData = await JSON.parse(await TestDataUtils.readTestDataFile());
+        const loc = await TestLocalizationUtils.parseLOCFileWithLanguageSetting();
+        const environment = await JSON.parse(await TestEnvironmentUtils.readEnvironmentFile())
+        
+        await HomeScreen.clickOnButtonSignIn()
+        await LoginScreen.submitLogin(run.participant.username, run.participant.password)
+        const errorMessage = loc.TC_0001.loginScreen.txtForgotPassword
+        await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })
+        await expect($('[label="Username not found."]')).toBeDisplayed({ wait: 10 * 1000 })
+    });
+})
+```
+
+## Specs
+
+Share concept with [ScreenObjects and page Objects](./README.md#pageobjects-and-screenobjects)
+
+BaseTest is super class and every test class should be extended from this one to share configs and common keywords
+
 > [!NOTE]
-> If you look into the screen/page-objects you might see that a lot of selectors are made private, meaning you can't use the elements in the spec-file itself. This has been done on purpose because one of the *best practices* is to remove all interactions from your spec files and implement the interactions in the page objects. This will make it easier to maintain for the future and easier to refactor if new interaction methods will be added or names will be adjusted.
+> There is an exception that the test case using Data-Driven won't share config in BaseTest.setup(),
+> since the data use in driven will be initialized very firstly before any hooks while BaseTest.setup() to be called in
+> hooks 'before()', means data driven > hooks, so when you call data in data driven keyword, it will
+> throw Undefined exception.
+> We need to make 'Setup test data ' > data driven, and we can make it by doing just simple 1 step: call 'testData =
+> await JSON.parse(await TestDataUtils.readTestDataFile());' before running data driven and
+> everything will be OK
+
+## Reports
+
+Cloud Service: BrowserStack report (built-in service)
+
+Local: Allure
+
+Log will log every keyword on your test script automatically, to log more test description on report (both Allure and
+BS), please use keyword ['logStep'](./tests/helpers/ReportUtils.ts)
+
+> [!NOTE]
+> If you run test locally and case get failed, screenshot will be attached into Allure report or can be found
+> at [savescreenshot folder](./resource/savescreenshot)
 
 ## Native App Tests
 
-All tests can be executed on the devices as configured in [`wdio.android.app.conf.ts`](./config/wdio.android.app.conf.ts) or [`wdio.ios.app.conf.ts`](./config/wdio.ios.app.conf.ts). Please check the below tests on what they do or how to run them separately.
-
-```sh
-# For Android local execution
-npm run android.app
-
-# For iOS local execution
-npm run ios.app
-```
-
 ### Drag And Drop
 
-Drag-and-drop an element can be a complex gesture to automate with Appium. The demo app has a simple puzzle that hopefully makes it easier and fun to understand how to implement a drag-and-drop in WebdriverIO. The test can be found [here](./tests/specs/app.drag.and.drop.spec.ts) and the drag-and-drop implementation can be found in [this](./tests/screenobjects DragScreen.ts) file.
-
-This file will now only hold the [`touchAction`](https://webdriver.io/docs/api/browser/touchAction/) way of using the drag and drop Gesture.
-The `touchPerform` is the *old* JSONWP way of implementing a gesture and is not W3C compatible. The `touchAction` is the new official W3C implementation of a gesture.
-
-You can run the single test with the following commands
-
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.drag.and.drop.spec.ts
-
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.drag.and.drop.spec.ts
-```
-
-### Form components
-
-The forms tab holds some components that might be a challenge during automation:
-
-- Input fields
-- Switches
-- Dropdowns / Pickers
-- Native alerts
-
-The tests and used page objects hopefully explain what you need to do to make this work and can be found [here](./tests/specs/app.forms.spec.ts).
-
-You can run the single test with the following commands
-
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.forms.spec.ts
-
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.forms.spec.ts
-```
+TBD: Implement Phase
 
 ### Login with Biometric support
 
-The Login screen holds a simple implementation of a Login and SignUp form. This boilerplate holds 2 different test files for the Login screen.
-
-- [Default Login/Sign Up](./tests/specs/app.login.spec.ts)
-- [Login through Touch-/FaceID or FingerPrint (Biometric Support)](./tests/specs/app.biometric.login.spec.ts)
-
-The last one can be very interesting because it will give you an idea of what you need to do when you need to log in with Touch-/FaceID or FingerPrint. The [`app.biometric.login.spec.ts`](./tests/specs/app.biometric.login.spec.ts) will also enable Touch-/FaceID if needed automatically for you for **Android Emulators** or **iOS Simulators**. It covers almost all platform versions.
-
-> ![NOTE]
-> The methods rely on the fact that the Android Emulator or iOS Simulator have English as the default language. If you have set up your test devices with a different language you might need to change certain selectors and or texts for the selectors.
-
-You can run the single test with the following commands
-
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.login.spec.ts
-npm run android.app -- --spec=tests/specs/app.biometric.login.spec.ts
-
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.login.spec.ts
-npm run ios.app -- --spec=tests/specs/app.biometric.login.spec.ts
-```
-
-### Navigation
-
-There are 2 types of navigation tests explained in this boilerplate.
-
-1. [Tab Bar](./tests/specs/app.tab.bar.navigation.spec.ts)
-1. [Deep Links](./tests/specs/app.deep.link.navigation.spec.ts)
-
-The most interesting test here will be the [Deep Links](./tests/specs/app.deep.link.navigation.spec.ts) because this might speed up your tests if your app supports Deep Links. Check the code and the `openDeepLinkUrl()` method in the [`CommonUtils.ts`](./tests/helpers/CommonUtils.ts) file to see how this works.
-
-> [!TIP]
-> If you are automating iOS apps and you can use Deep Links, then you might want to try adding the capability `autoAcceptAlerts:true` when you start the iOS device. This capability will automatically accept all alerts, also the alert that will appear when you want to open your deep link in Safari.
->
-> If you were going to use this capability, then don't forget to remove the last few lines in the [`openDeepLinkUrl()`](./tests/helpers/CommonUtils.ts)-method, see the comments in the method
-
-You can run the single test with the following commands
-
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.tab.bar.navigation.spec.ts
-npm run android.app -- --spec=tests/specs/app.deep.link.navigation.spec.ts
-
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.tab.bar.navigation.spec.ts
-npm run ios.app -- --spec=tests/specs/app.deep.link.navigation.spec.ts
-```
+TBD: Implement Phase
 
 ### Swiping
 
-Swiping is a movement with your finger on the screen that has a starting position on the screen, an x-, and y-coordinate and an end position, also an x-, and y-coordinate. The starting position can be seen as the first time you touch the screen, the initial *press*. The end position can be seen as the time you release the screen. If you translate this into steps you will get:
+TBD: Implement Phase
 
-1. Press your finger on the screen in the starting position
-1. Move your finger to the end position
-1. Release your finger when you are in the end position
+### Custom Widgets/Components/Controllers
 
-The [Swipe](./tests/specs/app.swipe.spec.ts) test will be an example of how to do that. It uses a [Gesture](./tests/helpers/Gestures.ts)-helper that might be useful for you in the future.
+Beside WebElement, we support custom widgets/components/controllers where you define controllers like Button, Table,
+DropdownList etc, . It all based on which is controller used on your project and define keywords based on your purpose.
+All controllers should be extended from BaseController and stored on seperated folder base on its platform
 
-If you want to know more about Gestures and how to automate them, then we would advise you to watch [this presentation "Swiping your way through Appium by Wim Selles"](https://youtu.be/oAJ7jwMNFVU).
+* [Android](./tests/widgets/android)
+* [IOS](./tests/widgets/ios)
+* [Web](./tests/widgets/web)
 
-You can run the single test with the following commands
+### Locator strategy for native apps
 
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.swipe.spec.ts
+No matter what the UI/UX of app consistent cross-platform,
+the app render on Android, IOS, Web will still be significant different on pageSource where the automation script works
+so don't force your element to support
+cross-platform, or try to use strategy to locate element consistently, it's nearly impossible (at least, wdio is not
+friendly to do it).
 
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.swipe.spec.ts
-```
+Instead, we will store elements separately
 
-### WebViews
+* [Android](./tests/screenobjects/android/objects)
+* [IOS](./tests/screenobjects/ios/objects)
+* [Web](./tests/pageobjects/objects)
 
-The app has a WebView that will automatically load the WebdriverIO documentation page. This boilerplate holds 2 test files:
-
-1. [Interact within a WebView with CSS Selectors](./tests/specs/app.webview.spec.ts).
-   *You will also find a test that interacts between a WebView and the Native part of the app.*
-1. [Automate a WebView based on Native Selectors](./tests/specs/app.webview.xpath.spec.ts). This test will compare the execution time of:
-
-    - automating the WebView by **NOT** switching to the WebView (by using native selectors).
-    - automating the WebView by **SWITCHING** to the WebView.
-
-    Check the console for load time differences. An example time could look like this
-
-    ```log
-    // Android
-    [0-0] RUNNING in Android - /tests/specs/app.webview.xpath.spec.ts
-    [0-0] Test time for using XPATH It took 0.799 seconds.
-    [0-0] Test time for switching to the WebView It took 0.238 seconds.
-    [0-0] PASSED in Android - /tests/specs/app.webview.xpath.spec.ts
-
-    // iOS
-    [0-0] RUNNING in iOS - /tests/specs/app.webview.xpath.spec.ts
-    [0-0] Test time for using XPATH It took 3.125 seconds.
-    [0-0] Test time for switching to the WebView It took 1.443 seconds.
-    [0-0] PASSED in iOS - /tests/specs/app.webview.xpath.spec.ts
-    ```
-
-You will also find a [WebView](./tests/helpers/WebView.ts) helper with hopefully useful methods that can help you automate a Hybrid App.
-Keep in the back of your mind that for the _simplicity_ of the Demo app, only one WebView is used. This is also used in the WebView-helper.
-
-More information about **Automating Hybrid Applications with Appium** and more complex WebViews can be found in [this webinar](https://youtu.be/_mPCRxplBfo) recording.
-
-You can run the single test with the following commands
-
-```sh
-# For Android local execution
-npm run android.app -- --spec=tests/specs/app.webview.spec.ts
-npm run android.app -- --spec=tests/specs/app.webview.xpath.spec.ts
-
-# For iOS local execution
-npm run ios.app -- --spec=tests/specs/app.webview.spec.ts
-npm run ios.app -- --spec=tests/specs/app.webview.xpath.spec.ts
-```
+And suggest you to use various strategies to identify elements flexibly.
 
 ## Automating Chrome or Safari
 
-Mobile web automation is almost the same as writing tests for desktop browsers. The only difference can be found in the configuration that needs to be used. Click [here](config/wdio.ios.browser.conf.ts) to find the config for iOS Safari and [here](config/wdio.android.browser.conf.ts) for Android Chrome.
-For Android be sure that the latest version of Chrome is installed, see also
-[here](./docs/FAQ.md#i-get-the-error-no-chromedriver-found-that-can-automate-chrome-). Our [`wdio.app.mobile.shared.conf.ts`](./config/wdio.app.mobile.shared.conf.ts) uses the `relaxedSecurity: true` argument from Appium which will allow Appium to automatically download the latest ChromeDriver.
+Mobile web automation is almost the same as writing tests for desktop browsers. The only difference can be found in the
+configuration that needs to be used.
+For Android be sure that the latest version of Chrome is installed, there are several ways to install chrome driver.
 
-For this boilerplate, the test cases from the Jasmine boilerplate, created by [Christian Bromann](https://github.com/christian-bromann), are used.
+1. You can install it to your node with npm
+1. You can download it manually on website (https://googlechromelabs.github.io/chrome-for-testing/)
+1. Or uses the `relaxedSecurity: true` argument from Appium which will allow Appium to automatically download the latest
+   ChromeDriver.
 
 ## Cloud vendors
 
-### Sauce Labs
-
-If you want to run the Native App tests on Sauce Labs you need to do 2 things:
-
-- Add the [Sauce Service](#add-sauce-service) to your project
-- Upload the apps to the [Sauce Labs Storage](#upload-apps-to-sauce-storage)
-
-When the above has been executed you can follow the steps:
-
-- [Run app tests on the Sauce Labs Real Device Cloud](#run-app-tests-on-the-sauce-labs-real-device-cloud)
-- [Run app tests on the Sauce Labs Emulators and Simulators](#run-app-tests-on-the-sauce-labs-emulators-and-simulators)
-
-#### Add Sauce Service
-
-Make sure you install the latest version of the `@wdio/sauce-service` with
-
-```shell
-npm install --save-dev @wdio/sauce-service
-```
-
-and add `services: ['sauce'],` to the config. If no `region` is provided it will automatically default to the US-Virtual/RDC cloud.
-If you provide `region: 'us'` or `region: 'eu'` it will connect to the US or the EU Virtual/RDC cloud.
-
-#### Upload apps to Sauce Storage
-
-If you want to use Android emulators, iOS simulators or Android real devices in the Sauce Labs UI you need to upload the apps to the Sauce Storage. You can find a script to upload them to, and the US, and EU DC in [this](./scripts) folder. You can push the files to the storage by executing the following steps in a terminal from the root of this project:
-
-```sh
-cd scripts
-./push_apps_to_sauce_storage.sh
-```
-
-When you've done that you will see a lot of successful logs in your terminal.
-
-#### Run app tests on the Sauce Labs Real Device Cloud
-
-> ![NOTE]
-> Due to the lack of signing iOS apps, this boilerplate doesn't support Real Devices.  Only Android Real Devices are supported. If you want to use iOS Real Devices then you need to provide your own app that has been signed properly.
-
-Please check the [Android Real Devices](./config/wdio.android.app.conf.ts)-config to see the setup for Android real devices.
-
-You can use the following scripts, see the [`package.json`](./package.json), to execute the tests in the cloud:
-
-```sh
-# For Android Real Devices
-# On EU DC
-npm run android.sauce.rdc.app.eu
-# On US DC
-npm run android.sauce.rdc.app.us
-```
-
-#### Run app tests on the Sauce Labs Emulators and Simulators
-
-Please check the following configs to verify the configurations:
-
-- [Android Emulators](./config/saucelabs/wdio.android.emulators.app.conf.ts)
-- [iOS Simulators](./config/saucelabs/wdio.ios.simulators.app.conf.ts)
-
-The following scripts can be used, see the [`package.json`](./package.json), to execute the tests in the cloud:
-
-```sh
-# For Android Emulators
-# On EU DC
-npm run android.sauce.emulators.app.eu
-# On US DC
-npm run android.sauce.emulators.app.us
-# For Android Real Devices
-# On EU DC
-npm run android.sauce.rdc.app.eu
-# On US DC
-npm run android.sauce.rdc.app.us
-
-# For iOS
-# On EU DC
-npm run ios.sauce.simulator.app.eu
-# On US DC
-npm run ios.sauce.simulator.app.us
-```
-
 ### BrowserStack
 
-This boilerplate provides a setup for testing with BrowserStack. Please check the [BrowserStack](./config/browserstack) folder to see the setup for iOS and Android.
+This project provides a setup for testing with BrowserStack. Please check the [BrowserStack](./config/browserstack)
+folder to see the setup for iOS and Android.
 
 Make sure you install the latest version of the `@wdio/browserstack-service` with:
 
@@ -352,31 +378,22 @@ Make sure you install the latest version of the `@wdio/browserstack-service` wit
 npm install --save-dev @wdio/browserstack-service
 ```
 
-There are 2 scripts that can be used. See the [`package.json`](./package.json) to execute the tests in the cloud:
+Make sure you set secret Access Token and clean up any hard code Token before upload code to repository
 
-```sh
-# For iOS
-$ npm run ios.browserstack.app
+The token can be set via environment variable: **BS_USERNAME** and **BS_ACCESS_KEY**
 
-# For Android
-$ npm run android.browserstack.app
-```
+## Environment Variables
 
-### TestingBot
+Project support to set and call Environment Variables follow CLI, purpose of this setting is to run test strategy
+variety, flexibly when we integrate with CI/CD system, you can config:
 
-This boilerplate provides a setup for testing with TestingBot. Please check the [TestingBot](./config/testingbot)-folder to see the setup for Android.
-
-Make sure you install the latest version of the `@wdio/testingbot-service` with
-
-```shell
-npm install --save-dev @wdio/testingbot-service
-```
-
-You can use the script from [`package.json`](./package.json), to execute the tests in the TestingBot cloud:
-
-```sh
-$ npm run android.testingbot.app
-```
+* process.env.TEST_ENVIRONMENT - Test environment like QA, DEV, Auto, Staging etc
+* process.env.SPECS - Test specs
+* process.env.RETRIES - Retry once failed
+* process.env.BS_USERNAME - BrowserStack username
+* process.env.BS_ACCESS_KEY - BrowserStack access key
+* process.env.BS_APP_NAME - BrowserStack Application ID
+* or even process.env.DEVICE_NAME & process.env.PLATFORM_VERSION to select BS devices
 
 ## FAQ
 
@@ -385,3 +402,10 @@ See [FAQ](./docs/FAQ.md)
 ## Tips and Tricks
 
 See [Tips and Tricks](./docs/TIPS_TRICKS.md)
+
+## Limitations
+
+Not support path alias since wdioV8 : https://github.com/webdriverio/webdriverio/issues/10191
+
+Wdio + Mocha DOES NOT HAVE built in function to customize test case relationship or dependOn, you can only control your
+flow by manage the order of testcase/testsuite

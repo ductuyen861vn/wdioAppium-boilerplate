@@ -1,8 +1,10 @@
-import {JsonUtils} from "../helpers/JsonUtils.js";
 import logger from "@wdio/logger";
+import {ReportUtils} from "../helpers/ReportUtils.js"
+import {TestDataUtils} from "../helpers/TestDataUtils.js";
+import {TestLocalizationUtils} from "../helpers/TestLocalizationUtils.js";
+import {TestEnvironmentUtils} from "../helpers/TestEnvironmentUtils.js";
 
 const log = logger('wdio.mobile-shared.conf');
-import allureReporter from '@wdio/allure-reporter'
 
 export class BaseTest {
     // Common property
@@ -19,21 +21,18 @@ export class BaseTest {
         this.logger = log
         log.info("Setup")
         log.info("Loading test data file to BaseTest")
-        this.testData = await JSON.parse(await JsonUtils.readTestDataFile());
+        this.testData = await JSON.parse(await TestDataUtils.readTestDataFile());
 
         log.info("Loading loc file to BaseTest")
-        this.loc = await JSON.parse(await JsonUtils.readLOCFile())
+        this.loc = await TestLocalizationUtils.parseLOCFileWithLanguageSetting();
 
         log.info("Loading Environment file to BaseTest")
-        this.environment = await JSON.parse(await JsonUtils.readEnvironmentFile())
+        this.environment = await JSON.parse(await TestEnvironmentUtils.readEnvironmentFile())
         return this
     }
 
     async logStep(stepDescription: string) {
-        // Log step to Allure report
-        allureReporter.addStep(stepDescription);
-        // Log step to BrowserStack report
-        await driver.execute('browserstack_executor: {"action": "annotate", "arguments": {"data": "' + stepDescription + '", "level": "info"}}');
+        await ReportUtils.logStep(stepDescription)
     }
 
     // Common teardown for all tests

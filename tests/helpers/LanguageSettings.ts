@@ -1,6 +1,6 @@
 class LanguageSettings {
     private static instance: LanguageSettings;
-    private language: 'en' | 'fr';
+    private language: 'en' | 'fr' | 'es' | 'de' | 'cn' ;
 
     private constructor() {
         this.language = 'en'; // default language
@@ -13,11 +13,11 @@ class LanguageSettings {
         return LanguageSettings.instance;
     }
 
-    public setLanguage(language: 'en' | 'fr'): void {
+    public setLanguage(language: 'en' | 'fr' | 'es' | 'de' | 'cn'): void {
         this.language = language;
     }
 
-    public getLanguage(): 'en' | 'fr' {
+    public getLanguage(): 'en' | 'fr' | 'es' | 'de' | 'cn' {
         return this.language;
     }
 }

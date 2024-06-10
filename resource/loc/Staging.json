@@ -1,5 +1,5 @@
 {
-  "EN-US": {
+  "en": {
     "TC_0001": {
       "homeScreen": {
         "txtJoinStudy": "Join Study",
@@ -11,7 +11,7 @@
       }
     }
   },
-  "FR-FR": {
+  "fr": {
     "TC_0001": {
       "homeScreen": {
         "txtJoinStudy": "FR-FR",

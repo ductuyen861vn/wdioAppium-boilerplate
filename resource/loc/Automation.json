@@ -1,5 +1,6 @@
 {
-  "EN-US": {
+  "en": {
+    "language": "en",
     "TC_0001": {
       "homeScreen": {
         "txtJoinStudy": "Join Study",
@@ -7,19 +8,22 @@
       },
       "loginScreen": {
         "txtSignIn": "Sign In",
-        "txtForgotPassword": "Forgot Password"
+        "txtForgotPassword": "Forgot Password",
+        "txtErrorMessage" : "Username not found."
       }
     }
   },
-  "FR-FR": {
+  "fr": {
+    "language": "fr",
     "TC_0001": {
       "homeScreen": {
-        "txtJoinStudy": "FR-FR",
-        "txtSignIn": "FR-FR"
+        "txtJoinStudy": "Rejoindre l'étude",
+        "txtSignIn": "Se connecter"
       },
       "loginScreen": {
-        "txtSignIn": "FR-FR",
-        "txtForgotPassword": "FR-FR"
+        "txtSignIn": "Se connecter",
+        "txtForgotPassword": "Mot de passe oublié",
+        "txtErrorMessage" : "Nom d'utilisateur introuvable."
       }
     }
   }
