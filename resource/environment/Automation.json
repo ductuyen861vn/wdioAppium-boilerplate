@@ -7,16 +7,19 @@
     "env": "Automation",
     "marlin": {
       "name": "Marlin",
-      "webAppUrl": "https://study1.thread.com.vn",
+      "webParticipantAppUrl": "https://study1.thread.com.vn",
+      "webParticipantAppLoginEndpoint": "https://study1.thread.com.vn/login",
       "participantUserName": "participant1",
+      "participantDefaultPassword": "Thread@123",
       "participantBasicAuth": "Basic Auth",
       "bundleId": "com.thread.utt4a088495",
       "appPackage": "N/A"
     },
     "prg002": {
       "name": "PRG002",
-      "webAppUrl": "https://study2.thread.com.vn",
-      "participantUserName": "participant1",
+      "webParticipantAppUrl": "https://study2.thread.com.vn",
+      "webParticipantAppLoginEndpoint": "https://study2.thread.com.vn/login",
+      "participantDefaultPassword": "Thread@123",
       "participantBasicAuth": "Basic Auth",
       "bundleId": "com.thread.utt92fbce95",
       "appPackage": "com.thread.t92fbce9"

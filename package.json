@@ -60,6 +60,7 @@
     "appium-uiautomator2-driver": "latest",
     "appium-webdriveragent": "^8.6.0",
     "appium-xcuitest-driver": "latest",
+    "axios": "^1.7.2",
     "chai": "^5.1.1",
     "chromedriver": "^125.0.2",
     "date-fns": "^3.6.0",
