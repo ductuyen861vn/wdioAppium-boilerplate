@@ -14,6 +14,7 @@ class JoinStudyScreen extends BaseScreen {
     private joinStudyScreenObjects: typeof JoinStudyScreenObjects;
     constructor() {
         super(SELECTORS.SCREEN);
+        this.initialize()
     }
 
     async initialize() {

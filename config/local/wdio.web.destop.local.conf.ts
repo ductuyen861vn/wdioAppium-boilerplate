@@ -6,7 +6,7 @@ import {getSpecsByConfigFileName} from "../../tests/helpers//CommonUtils.ts";
 
 const webBrowser = process.env.BROWSER;
 const retries = process.env.RETRIES;
-const defaultImplicitWait = process.env.IMPLICIT_WAIT_WEB;
+const sessionTimeout = process.env.SESSION_TIMEOUT_WEB;
 const debug = process.env.DEBUG
 
 const configFilePath = fileURLToPath(import.meta.url);
@@ -37,7 +37,7 @@ export const config: WebdriverIO.Config = {
          * tests because they can take a bit longer.
          */
         execArgv: debug ? ['--inspect'] : [],
-        timeout: Number(defaultImplicitWait) * 1000, // debug 30min, run 3min
+        timeout: Number(sessionTimeout) * 1000, // debug 30min, run 3min
         retries: Number(retries),
     },
 };

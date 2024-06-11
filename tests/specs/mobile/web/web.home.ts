@@ -2,11 +2,8 @@ import HomePage from "../../../pageobjects/pages/HomePage.js";
 import HomePageObjects from "../../../pageobjects/objects/en/HomePageObjects.js";
 import {BaseTest} from "../../BaseTest.js";
 import {languageSettings} from "../../../helpers/LanguageSettings.js";
-import HomeScreen from "../../../screenobjects/ios/screens/HomeScreen.js";
-import LoginScreen from "../../../screenobjects/ios/screens/LoginScreen.js";
 import {TestDataUtils} from "../../../helpers/TestDataUtils.js";
-import {TestLocalizationUtils} from "../../../helpers/TestLocalizationUtils.js";
-import {TestEnvironmentUtils} from "../../../helpers/TestEnvironmentUtils.js";
+
 const testData = await JSON.parse(await TestDataUtils.readTestDataFile());
 
 export class WebHome extends BaseTest {

@@ -28,7 +28,7 @@ export const config: WebdriverIO.Config = {
                 deviceOrientation: 'portrait',
                 deviceName: 'iPad Air 4',
                 osVersion: '14',
-                projectName: "ThreadResearch",
+                projectName: "Thread",
             },
         },
     ],

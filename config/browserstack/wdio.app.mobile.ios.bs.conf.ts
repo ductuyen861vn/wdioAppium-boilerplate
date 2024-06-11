@@ -45,8 +45,8 @@ export const config: WebdriverIO.Config = {
             deviceName: 'iPhone 12 Pro',
             platformVersion: '17',
             platformName: 'ios',
-            projectName: "ThreadResearch",
-            appiumVersion: "2.4.1"
+            projectName: "Thread",
+            appiumVersion: "2.4.1",
         },
 
         //Other configs

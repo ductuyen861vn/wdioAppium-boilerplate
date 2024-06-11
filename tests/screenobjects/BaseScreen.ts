@@ -3,6 +3,7 @@ import logger from "@wdio/logger";
 import {TestDataUtils} from "../helpers/TestDataUtils.js";
 import {TestLocalizationUtils} from "../helpers/TestLocalizationUtils.js";
 import {TestEnvironmentUtils} from "../helpers/TestEnvironmentUtils.js";
+import {WaitUtils} from "../helpers/WaitUtils.js";
 
 const log = logger('BaseScreen');
 
@@ -46,5 +47,6 @@ export default class BaseScreen {
         if (await driver.isKeyboardShown()){
             if (await SystemObjects.btnDoneKeyboard.isDisplayed()) await SystemObjects.btnDoneKeyboard.click()
         }
+        await WaitUtils.waitForElementToDisappear(await SystemObjects.btnDoneKeyboard)
     }
 }

@@ -45,8 +45,8 @@ export const config: WebdriverIO.Config = {
             deviceName: 'Google Pixel 7 Pro',
             platformVersion: '13.0',
             platformName: 'android',
-            projectName: "ThreadResearch",
-            appiumVersion: "2.4.1"
+            projectName: "Thread",
+            appiumVersion: "2.4.1",
         },
         // @ts-ignore
         'appium:newCommandTimeout': 3000,

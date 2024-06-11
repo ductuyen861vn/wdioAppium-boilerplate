@@ -14,6 +14,7 @@ export class LoginScreen extends BaseScreen {
     private loginScreenObjects: typeof LoginScreenObjects;
     constructor () {
         super(SELECTORS.SCREEN);
+        this.initialize()
     }
 
     async initialize() {

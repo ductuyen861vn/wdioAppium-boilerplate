@@ -5,15 +5,21 @@
 
   "environment": {
     "env": "Automation",
-    "study1": {
+    "marlin": {
+      "name": "Marlin",
       "webAppUrl": "https://study1.thread.com.vn",
       "participantUserName": "participant1",
-      "participantBasicAuth": "Basic Auth"
+      "participantBasicAuth": "Basic Auth",
+      "bundleId": "com.thread.utt4a088495",
+      "appPackage": "N/A"
     },
-    "study2": {
+    "prg002": {
+      "name": "PRG002",
       "webAppUrl": "https://study2.thread.com.vn",
       "participantUserName": "participant1",
-      "participantBasicAuth": "Basic Auth"
+      "participantBasicAuth": "Basic Auth",
+      "bundleId": "com.thread.utt92fbce95",
+      "appPackage": "com.thread.t92fbce9"
     }
   }
 }

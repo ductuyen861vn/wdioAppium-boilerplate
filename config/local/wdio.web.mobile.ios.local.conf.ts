@@ -1,4 +1,4 @@
-import {config as baseConfig} from './wdio.app.mobile.shared.local.conf.ts';
+import {config as baseConfig} from '../wdio.web.shared.conf.ts';
 import {fileURLToPath} from "url";
 import path from "path";
 import {getSpecsByConfigFileName} from "../../tests/helpers/CommonUtils.ts";
@@ -8,6 +8,11 @@ const specs = await getSpecsByConfigFileName(configFileName);
 
 export const config: WebdriverIO.Config = {
     ...baseConfig,
+
+    port: 4723,
+    hostname: 'localhost',
+    path: '/wd/hub',
+    protocol: 'http',
 
     // ==================
     // Specify Test Files

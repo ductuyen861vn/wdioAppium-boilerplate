@@ -1,7 +1,7 @@
 import {executeInHomeScreenContext} from './CommonUtils.js';
 import {Constants} from "./Constants.js";
 
-class Biometrics {
+export class Biometrics {
     private get iosAllowBiometry() {return $('~Don’t Allow');}
     private get allowBiometry() {return $('-ios class chain:**/XCUIElementTypeButton[`name == "Allow" OR name=="OK"`]');}
     private get androidBiometryAlert() {
@@ -61,5 +61,3 @@ class Biometrics {
         await driver.fingerPrint(fingerprintId);
     }
 }
-
-export default new Biometrics();

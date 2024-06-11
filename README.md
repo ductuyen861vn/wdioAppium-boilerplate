@@ -401,11 +401,11 @@ See [FAQ](./docs/FAQ.md)
 
 ## Tips and Tricks
 
-See [Tips and Tricks](./docs/TIPS_TRICKS.md)
+Resolve provisioning profile, [link](https://appium.github.io/appium-xcuitest-driver/latest/preparation/prov-profile-full-manual/)
 
 ## Limitations
 
-Not support path alias since wdioV8 : https://github.com/webdriverio/webdriverio/issues/10191
+Not support path alias since wdioV8 , wdio [ticket](https://github.com/webdriverio/webdriverio/issues/10191)
 
 Wdio + Mocha DOES NOT HAVE built in function to customize test case relationship or dependOn, you can only control your
 flow by manage the order of testcase/testsuite

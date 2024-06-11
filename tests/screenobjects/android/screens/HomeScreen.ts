@@ -19,8 +19,9 @@ class HomeScreen extends BaseScreen {
     // @ts-ignore
     private joinStudyScreenObjects: typeof JoinStudyScreenObjects;
 
-    constructor () {
+    constructor() {
         super(SELECTORS.SCREEN);
+        this.initialize()
     }
 
     async initialize() {
@@ -34,15 +35,17 @@ class HomeScreen extends BaseScreen {
         }
     }
 
-    get screen () {return $(SELECTORS.SCREEN);}
+    get screen() {
+        return $(SELECTORS.SCREEN);
+    }
 
-    async clickOnButtonJoinStudy(){
+    async clickOnButtonJoinStudy() {
         log.info("Click on button Join Study");
-       await this.homeScreenObjects.btnJoinStudy.click()
+        await this.homeScreenObjects.btnJoinStudy.click()
         await expect(this.joinStudyScreenObjects.lblQuestion).toBeDisplayed()
     }
 
-    async clickOnButtonSignIn(){
+    async clickOnButtonSignIn() {
         log.info("Click on button SignIn");
         await this.homeScreenObjects.btnSignIn.click()
         await expect(this.loginScreenObjects.txtPassword).toBeDisplayed()

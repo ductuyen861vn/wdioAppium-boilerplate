@@ -4,9 +4,10 @@ import {ScreenShotUtils} from "../tests/helpers/ScreenShotUtils.js";
 // @ts-ignore
 import fs from "fs-extra";
 import path from "path";
+import {addCustomCommands} from "../tests/helpers/CustomCommandUtils.js";
 
 const retries = process.env.RETRIES;
-const defaultImplicitWait = process.env.IMPLICIT_WAIT_MOBILE;
+const sessionTimeout = process.env.SESSION_TIMEOUT;
 const debug = process.env.DEBUG
 
 /**
@@ -73,7 +74,7 @@ export const config: Options.Testrunner = {
      * NOTE: This has been increased for more stable Appium Native app
      * tests because they can take a bit longer.
      */
-    waitforTimeout: 45000,
+    waitforTimeout: 10000,
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
     connectionRetryTimeout: 120000,
@@ -132,7 +133,7 @@ export const config: Options.Testrunner = {
          * tests because they can take a bit longer.
          */
         execArgv: debug ? ['--inspect'] : [],
-        timeout: Number(defaultImplicitWait) * 1000,
+        timeout: Number(sessionTimeout) * 1000,
         retries: Number(retries),
     },
 
@@ -148,7 +149,9 @@ export const config: Options.Testrunner = {
     /**
      * NOTE: No Hooks are used in this project, but feel free to add them if you need them.
      */
-    before: async () => {
+
+    before: function (capabilities, specs) {
+        addCustomCommands();
     },
 
     after: async () => {

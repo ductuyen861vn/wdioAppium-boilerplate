@@ -28,9 +28,9 @@ export const config: WebdriverIO.Config = {
                 deviceName: 'Google Pixel 5',
                 osVersion: '12.0',
                 deviceOrientation: 'portrait',
-                projectName: "ThreadResearch",
-                buildName: 'ThreadResearch',
-                sessionName: 'ThreadResearch',
+                projectName: "Thread",
+                buildName: 'Thread',
+                sessionName: 'Thread',
                 debug: true,
                 networkLogs: true
             },
