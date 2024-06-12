@@ -1,4 +1,5 @@
 import {HomeScreenObjectsEN} from "../en/HomeScreenObjects.js";
+import Button from "../../../../widgets/Button.js";
 
 export class HomeScreenObjectsFR extends HomeScreenObjectsEN{
     /**
@@ -6,7 +7,10 @@ export class HomeScreenObjectsFR extends HomeScreenObjectsEN{
      */
     // get btnJoinStudy () { return $('[name="Join Study"]'); }
     // get btnSignIn () { return $('[name="Sign In"]'); }
-    get btnJoinStudy () { return $('[label = "Join Study FR"]'); }
-    get btnSignIn () { return $('[label = "Sign In FR"]'); }
+    get joinStudyElement() { return $('[label = "Join Study"]'); }
+    get signInElement() { return $('[label = "Sign In"]'); }
+
+    get btnJoinStudy() { return new Button(this.joinStudyElement); }
+    get btnSignIn() { return new Button(this.signInElement); }
 }
 export default new HomeScreenObjectsFR();

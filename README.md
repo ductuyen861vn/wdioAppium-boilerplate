@@ -149,7 +149,9 @@ Please follows concept below to manage test data
 
 ### API
 
-TBD
+Using API Factory pattern, the supper class **ParticipantApiService.ts** and **PortalApiService.ts** handle all logic of
+login, get cookies, every request POST/GET/PUT/DELETE etc... and share to sup classes which override endpoint and
+payload to use
 
 ## PageObjects and ScreenObjects
 
@@ -401,7 +403,8 @@ See [FAQ](./docs/FAQ.md)
 
 ## Tips and Tricks
 
-Resolve provisioning profile, [link](https://appium.github.io/appium-xcuitest-driver/latest/preparation/prov-profile-full-manual/)
+Resolve provisioning
+profile, [link](https://appium.github.io/appium-xcuitest-driver/latest/preparation/prov-profile-full-manual/)
 
 ## Limitations
 

@@ -1,7 +1,7 @@
 import BaseController from '../BaseController.js';
 
 export default class DatePicker extends BaseController {
-    constructor(element: WebdriverIO.Element) {
+    constructor(element: Promise<WebdriverIO.Element>) {
         super(element);
     }
 

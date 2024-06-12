@@ -1,16 +1,18 @@
 export default class BaseController {
-    protected element: WebdriverIO.Element;
+    protected pElement: Promise<WebdriverIO.Element>;
 
-    constructor(element: WebdriverIO.Element) {
-        this.element = element;
+    constructor(element: Promise<WebdriverIO.Element>) {
+        this.pElement = element;
     }
 
     async click() {
-        await this.element.click();
+        const element = await this.pElement;
+        await element.click();
     }
 
     async isDisplayed() {
-        return await this.element.isDisplayed();
+        const element = await this.pElement;
+        return await element.isDisplayed();
     }
 
     // Add other common methods here
