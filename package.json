@@ -31,7 +31,10 @@
     "wdioMobileIOSLocal": "wdio run config/local/wdio.app.mobile.ios.local.conf.ts",
     "test": "wdio run config/local/wdio.web.destop.local.conf.ts & wdio run config/local/wdio.app.mobile.ios.local.conf.ts",
     "bsIOS": "SPECS=../../tests/specs/mobile/ios/**/ios.login.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts",
-    "demo": "SPECS=../../tests/specs/mobile/ios/**/ios.login.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts & wdio run config/browserstack/wdio.app.mobile.android.bs.conf.ts & wdio run config/local/wdio.web.mobile.ios.local.conf.ts"
+    "demo": "SPECS=../../tests/specs/mobile/ios/**/ios.login.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts & wdio run config/browserstack/wdio.app.mobile.android.bs.conf.ts & wdio run config/local/wdio.web.mobile.ios.local.conf.ts",
+    "bsMobile": "SPECS=../../tests/specs/mobile/ios/**/ios.login.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts & wdio run config/browserstack/wdio.app.mobile.android.bs.conf.ts",
+    "bsMobile2": "BS_IOS_VERSION=16 SPECS=../../tests/specs/mobile/ios/**/ios.login.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts & SPECS=../../tests/specs/mobile/ios/**/ios.home.ts wdio run config/browserstack/wdio.app.mobile.ios.bs.conf.ts & wdio run config/browserstack/wdio.app.mobile.android.bs.conf.ts",
+    "bsWeb": "wdio run config/browserstack/wdio.web.mobile.ios.bs.conf.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.3.16",

@@ -42,8 +42,8 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         'bstack:options': {
             // @ts-ignore
-            deviceName: 'Google Pixel 7 Pro',
-            platformVersion: '13.0',
+            deviceName: process.env.BS_ANDROID_DEVICE,
+            platformVersion: process.env.BS_ANDROID_VERSION,
             platformName: 'android',
             projectName: "Thread",
             appiumVersion: "2.4.1",

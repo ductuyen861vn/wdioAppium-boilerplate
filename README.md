@@ -412,3 +412,7 @@ Not support path alias since wdioV8 , wdio [ticket](https://github.com/webdriver
 
 Wdio + Mocha DOES NOT HAVE built in function to customize test case relationship or dependOn, you can only control your
 flow by manage the order of testcase/testsuite
+
+## DEVICE LIST
+
+TBD

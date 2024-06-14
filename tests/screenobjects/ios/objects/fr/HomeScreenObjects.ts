@@ -7,8 +7,8 @@ export class HomeScreenObjectsFR extends HomeScreenObjectsEN{
      */
     // get btnJoinStudy () { return $('[name="Join Study"]'); }
     // get btnSignIn () { return $('[name="Sign In"]'); }
-    get joinStudyElement() { return $('[label = "Join Study"]'); }
-    get signInElement() { return $('[label = "Sign In"]'); }
+    get joinStudyElement() { return $('[label = "Join Study FR"]'); }
+    get signInElement() { return $('[label = "Sign In FR"]'); }
 
     get btnJoinStudy() { return new Button(this.joinStudyElement); }
     get btnSignIn() { return new Button(this.signInElement); }

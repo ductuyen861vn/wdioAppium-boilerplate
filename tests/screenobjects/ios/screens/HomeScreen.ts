@@ -4,6 +4,7 @@ import HomeScreenObjects from "../objects/en/HomeScreenObjects.js";
 import JoinStudyScreenObjects from "../objects/en/JoinStudyScreenObjects.js";
 import LoginScreenObjects from "../objects/en/LoginScreenObjects.js";
 import {languageSettings} from "../../../helpers/LanguageSettings.js";
+import process from "node:process";
 
 const log = logger('HomeScreen');
 

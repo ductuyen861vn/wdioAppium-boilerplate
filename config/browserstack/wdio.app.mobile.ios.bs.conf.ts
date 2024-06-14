@@ -42,8 +42,8 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         'bstack:options': {
             // @ts-ignore
-            deviceName: 'iPhone 12 Pro',
-            platformVersion: '17',
+            deviceName: process.env.BS_IOS_DEVICE,
+            platformVersion: process.env.BS_IOS_VERSION,
             platformName: 'ios',
             projectName: "Thread",
             appiumVersion: "2.4.1",
