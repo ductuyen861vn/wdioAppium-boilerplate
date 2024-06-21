@@ -19,9 +19,9 @@ chromeDriver
 *.mp4
 
 #report
-allure-results/
-junit-results/
-history_backup/
+#allure-results/
+#junit-results/
+#history_backup/
 
 #screenshot
 resource/savescreenshot/

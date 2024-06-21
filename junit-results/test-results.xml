@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="4" errors="0" skipped="0">
+  <testsuite name="Thread Mobile Verify Data Driven on Home Page" timestamp="2024-06-18T09:05:42" time="53.017" tests="2" failures="2" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Thread-Mobile-Verify Data-Driven on Home Page"/>
+      <property name="capabilities" value="ios.iphone12pro"/>
+      <property name="file" value="file://./tests/specs/mobile/ios/ios.login.ts"/>
+    </properties>
+    <testcase classname="ios.iphone12pro.Thread-Mobile-Verify_Data-Driven_on_Home_Page" name="should return error message if login by invalid user participant1@gmail com" time="38.117">
+      <failure message="Expect $(`[label=&quot;Username not found.&quot;]`) to be displayed&#xA;&#xA;Expected: &quot;displayed&quot;&#xA;Received: &quot;not displayed&quot;"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: should return error message if login by invalid user : participant1@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: should return error message if login by invalid user : participant1@gmail.com\",\"level\":\"info\"}}","args":[]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/23000000-0000-0000-A00A-000000000000/click - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"xpath","value":"//XCUIElementTypeSecureTextField"}
+RESULT: {"using":"xpath","value":"//XCUIElementTypeSecureTextField"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/31000000-0000-0000-A00A-000000000000/displayed - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"xpath","value":"//XCUIElementTypeTextField"}
+RESULT: {"using":"xpath","value":"//XCUIElementTypeTextField"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/30000000-0000-0000-A00A-000000000000/clear - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/30000000-0000-0000-A00A-000000000000/value - {"text":"participant1@gmail.com"}
+RESULT: {"text":"participant1@gmail.com"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/appium/device/is_keyboard_shown - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/57000000-0000-0000-A00A-000000000000/displayed - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/57000000-0000-0000-A00A-000000000000/click - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"xpath","value":"//XCUIElementTypeSecureTextField"}
+RESULT: {"using":"xpath","value":"//XCUIElementTypeSecureTextField"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/31000000-0000-0000-A00A-000000000000/clear - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/31000000-0000-0000-A00A-000000000000/value - {"text":"PW2@123456789"}
+RESULT: {"text":"PW2@123456789"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/appium/device/is_keyboard_shown - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/8F000000-0000-0000-A00A-000000000000/displayed - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/8F000000-0000-0000-A00A-000000000000/click - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Toolbar Done Button\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"xpath","value":"//XCUIElementTypeButton[@name=\"Sign In\"]"}
+RESULT: {"using":"xpath","value":"//XCUIElementTypeButton[@name=\"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element/32000000-0000-0000-A00A-000000000000/click - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label=\"Username not found.\"]"}
+RESULT: {"using":"css selector","value":"[label=\"Username not found.\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/screenshot - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Expect $(`[label="Username not found."]`) to be displayed
+
+Expected: "displayed"
+Received: "not displayed"
+    at Context.<anonymous> (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/specs/mobile/ios/ios.login.ts:23:70)
+]]></system-err>
+    </testcase>
+    <testcase classname="ios.iphone12pro.Thread-Mobile-Verify_Data-Driven_on_Home_Page" name="should return error message if login by invalid user participant2@gmail com" time="14.897">
+      <failure message="Can't call click on element with selector &quot;[label = &quot;Sign In&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: should return error message if login by invalid user : participant2@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: should return error message if login by invalid user : participant2@gmail.com\",\"level\":\"info\"}}","args":[]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/screenshot - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "[label = "Sign In"]" because element wasn't found
+    at async Button.click (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/widgets/BaseController.ts:8:9)
+    at async HomeScreen.clickOnButtonSignIn (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/screenobjects/ios/screens/HomeScreen.ts:35:9)
+    at async Context.<anonymous> (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/specs/mobile/ios/ios.login.ts:21:21)
+]]></system-err>
+    </testcase>
+  </testsuite>
+  <testsuite name="Thread Mobile Verify LOC Data Driven on Home Page" timestamp="2024-06-18T09:06:35" time="29.612" tests="2" failures="2" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Thread-Mobile-Verify LOC/Data-Driven on Home Page"/>
+      <property name="capabilities" value="ios.iphone12pro"/>
+      <property name="file" value="file://./tests/specs/mobile/ios/ios.login.ts"/>
+    </properties>
+    <testcase classname="ios.iphone12pro.Thread-Mobile-Verify_LOC/Data-Driven_on_Home_Page" name="Language en should return error message if login by invalid user participant1@gmail com" time="14.905">
+      <failure message="Can't call click on element with selector &quot;[label = &quot;Sign In&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: [Language=en]should return error message if login by invalid user : participant1@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: [Language=en]should return error message if login by invalid user : participant1@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/screenshot - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "[label = "Sign In"]" because element wasn't found
+    at async Button.click (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/widgets/BaseController.ts:8:9)
+    at async HomeScreen.clickOnButtonSignIn (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/screenobjects/ios/screens/HomeScreen.ts:35:9)
+    at async Context.<anonymous> (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/specs/mobile/ios/ios.login.ts:37:21)
+]]></system-err>
+    </testcase>
+    <testcase classname="ios.iphone12pro.Thread-Mobile-Verify_LOC/Data-Driven_on_Home_Page" name="Language fr should return error message if login by invalid user participant2@gmail com" time="14.703">
+      <failure message="Can't call click on element with selector &quot;[label = &quot;Sign In FR&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: [Language=fr]should return error message if login by invalid user : participant2@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"browserstack_executor: {\"action\":\"annotate\",\"arguments\":{\"data\":\"Test: [Language=fr]should return error message if login by invalid user : participant2@gmail.com\",\"level\":\"info\"}}","args":[]}
+RESULT: {"script":"mobile: activateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/element - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/elements - {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+RESULT: {"using":"css selector","value":"[label = \"Sign In FR\"]"}
+COMMAND: GET /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/screenshot - {}
+RESULT: {}
+COMMAND: POST /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef/execute/sync - {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+RESULT: {"script":"mobile: terminateApp","args":[{"bundleId":"com.thread.utt92fbce95"}]}
+COMMAND: DELETE /session/a3fb73bbe62097ba89cbe927d686d5324e43d2ef - {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "[label = "Sign In FR"]" because element wasn't found
+    at async Button.click (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/widgets/BaseController.ts:8:9)
+    at async HomeScreen.clickOnButtonSignIn (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/screenobjects/ios/screens/HomeScreen.ts:35:9)
+    at async Context.<anonymous> (file:///Users/tuyenpham/Desktop/Projects/THREAD/WdioAppiumResearch/wdioAppium-boilerplate/tests/specs/mobile/ios/ios.login.ts:37:21)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
